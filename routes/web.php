@@ -38,13 +38,7 @@ Route::get('/admin/staff', 'PagesController@staff');
 Route::get('/users', 'UserController@users');
 
 Route::get('/staff', 'StaffController@staff');
-Route::get('/staff/create', 'StaffController@staff');
-Route::get('/staff/edit', 'StaffController@staff');
-
 Route::get('/service', 'ServiceController@service');
-Route::get('/service/create', 'ServiceController@service');
-Route::get('/service/edit', 'ServiceController@service');
-
 
 
 // Route::get('/staff', 'StaffController@staff');

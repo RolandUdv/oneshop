@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\Store;
 use App\Staff;
-use App\Service;
-use App\Booking;
+// use App\Service;
+// use App\Booking;
 
 
 class PagesController extends Controller

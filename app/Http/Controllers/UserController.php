@@ -8,19 +8,14 @@ use App\Users;
 
 class UserController extends Controller
 {
-/**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $title = "User";
-        $users = Users::all();
-        $users = Users::orderBy('user_id', 'asc')->take(5)->get(); // LIMIT 5
-
-        return view('admin.users', ['title' => $title,
-        'users' => $users]);
+        //
     }
 
     /**
