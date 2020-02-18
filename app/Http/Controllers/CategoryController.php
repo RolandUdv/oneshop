@@ -15,10 +15,12 @@ class CategoryController extends Controller
     public function index()
     {
         $title = "Categories";
-        // return view('admin.categories');;
-        $categories = Category::all();
+        $categories = Category::orderBy('category_id', 'asc')->paginate(10);
+        $categoriescount = Category::count('category_id');
+
         return view('admin.categories', ['title' => $title,
-        'categories' => $categories]);
+        'categories' => $categories,
+        'categoriescount' => $categoriescount]);
         // return view('admin.categories')->with('categories', $categories);
 
         // return Category::all();
@@ -33,7 +35,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $title = "Add new Category";
+        return view('categories.create')->with('title', $title);
     }
 
     /**
@@ -44,7 +47,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'category_name' => 'required'
+        ]);
+        $categories = new Category;
+        $categories->category_name = $request->input('category_name');
+        $categories->save();
+        return redirect('categories/create')->with('success', 'Category Created');
     }
 
     /**
@@ -56,7 +65,7 @@ class CategoryController extends Controller
     public function show($id)
     {
         $categories = Category::find($id);
-        return view('pages.index')->with('categories', $categories);
+        return view('admin.categories')->with('categories', $categories);
     }
 
     /**
@@ -67,7 +76,10 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $title = 'Edit Category';
+        $categories = Category::find($id);
+        return view('categories.edit', ['title' => $title,
+        'categories' => $categories]);
     }
 
     /**
@@ -79,7 +91,13 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'category_name' => 'required'
+        ]);
+        $categories = Category::find($id);
+        $categories->category_name = $request->input('category_name');
+        $categories->save();
+        return redirect('categories')->with('success', 'Category Updated');
     }
 
     /**
@@ -90,6 +108,8 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categories = Category::find($id);
+        $categories->delete();
+        return redirect('categories')->with('success', 'Category Removed');
     }
 }
