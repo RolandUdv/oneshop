@@ -11,12 +11,12 @@
 <div class="container">
     <div class="col-md-12 text-center">
         <!-- justify-content-center, brings content to the center -->
-        @if(count($categories) > 0)
+        @if(count($services) > 0)
         {{-- <div class="btn-toolbar text-center" role="toolbar" aria-label="Toolbar with button groups"> --}}
         {{-- <div class="btn-group btn-group-lg" role="group"> --}}
-            @foreach ($categories as $category)
-            <a href="/categories/{{$category->category_id}}"><button type="button" class="btn btn-secondary"
-                    style="margin-right:10px; margin-bottom:10px;">{{$category->category_name}}</button></a>
+            @foreach ($services as $service)
+            <a href="{{'#'}}"><button type="button" class="btn btn-secondary"
+                    style="margin-right:10px; margin-bottom:10px;">{{$service->service_name}}</button></a>
             @endforeach
         {{-- </div> --}}
         @endif
@@ -76,7 +76,7 @@
       
           <div class="col-lg-3 col-md-4 col-6">
             <a href="#" class="d-block mb-4 h-100">
-                  <img class="img-fluid img-thumbnail" src="https://lh3.googleusercontent.com/proxy/0GGDc1GjS1x5_oxGmpncWYfbA4b_UTMYmriQYah7aowkdAjwqtSC9ckKuJbWTBMDDde77la_9KQgMYXxdmaql0IcxsDkEyXLH9GfezjMvd3BFtcq63-CVf0P9zNhdIQ36oUJ-UBTvKiWpsQ" alt="">
+                  <img class="img-fluid img-thumbnail" src="https://lh3.googleusercontent.com/proxy/3kcmCBnUK4NgNRp7dSMCJllZ9JraKCX7OHQhjApDIEPcMsFU8P9Idb9vXUlYKcGvcqQSpTb5EJDeec1qTN26_99QsNe7W89ERzdMnG3lBGRW1XVhQR3lPvsEBM5UkdSegMez_o-MspzX1dMZaXqt2147Hac" alt="">
                 </a>
           </div>
           <div class="col-lg-3 col-md-4 col-6">

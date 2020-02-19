@@ -75,8 +75,7 @@
         <p>Found {{$staffcount}} records in the system.</p>
         @endif
     </div>
-    {{-- <div class="card-footer small text-muted">Last Updated at: {{$staf->updated_at}}
-</div> --}}
+    <div class="card-footer small text-muted">Last Updated at: @include('inc.todaydate')</div>
 </div>
 </div>
 @endsection

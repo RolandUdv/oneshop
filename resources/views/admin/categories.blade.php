@@ -51,7 +51,7 @@
                 <p>Found {{$categoriescount}} services in the system.</p>
                 @endif
             </div>
-            {{-- <div class="card-footer small text-muted">Last Updated at: {{$services->updated_at}}</div> --}}
+            <div class="card-footer small text-muted">Last Updated at: @include('inc.todaydate')</div>
         </div>
         </div>
         @endsection

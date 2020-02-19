@@ -18,8 +18,9 @@
                                 <th>Service Name</th>
                                 <th>Description</th>
                                 <th>Price</th>
+                                <th>Length</th>
                                 <th>Edit</th>
-                                <th>Delete</th>
+                                <th>Delete</th>                               
                             </tr>
                         </thead>
                         <tbody>
@@ -30,6 +31,23 @@
                                     <td>{{$service->service_name}}</td>
                                     <td>{{ str_limit($service->service_description, 100, '...')}}</td>
                                     <td>£ {{$service->service_price}}</td>
+                                    @if($service->service_length == 0)
+                                        <td>15m</td>
+                                    @elseif($service->service_length == 1)
+                                        <td>30m</td>
+                                    @elseif($service->service_length == 2)
+                                        <td>45m</td>
+                                    @elseif($service->service_length == 3)
+                                        <td>1hr</td>
+                                    @elseif($service->service_length == 4)
+                                        <td>1hr 15m</td>
+                                    @elseif($service->service_length == 5)
+                                        <td>1hr 30m</td>
+                                    @elseif($service->service_length == 6)
+                                        <td>1hr 45m</td>
+                                    @elseif($service->service_length == 7)
+                                        <td>2hrs</td>
+                                    @endif
                                     <td>
                                         <a href="service/{{$service->service_id}}/edit">
                                             <i class="fas fa-edit"></i>Edit</a>
@@ -57,7 +75,7 @@
                 <p>Found {{$servicescount}} services in the system.</p>
                 @endif
             </div>
-            {{-- <div class="card-footer small text-muted">Last Updated at: {{$services->updated_at}}</div> --}}
+            <div class="card-footer small text-muted">Last Updated at: @include('inc.todaydate')</div>
         </div>
         </div>
         @endsection

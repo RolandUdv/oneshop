@@ -37,6 +37,7 @@
     <!--Let browser know website is optimized for mobile-->
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 
@@ -50,6 +51,7 @@
             @include('inc.messages')
 
             @yield('content')
+            @yield('script')
 
             <!-- Breadcrumbs-->
             {{-- <ol class="breadcrumb">
@@ -363,9 +365,10 @@
             </div>
           </footer>
           <!-- Scroll to Top Button-->
-          <a class="scroll-to-top rounded" href="#page-top">
+          <a class="scroll-to-top rounded" href="#">
             <i class="fa fa-angle-up"></i>
           </a>
+          
           <!-- Logout Modal-->
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">

@@ -46,16 +46,18 @@ class ServiceController extends Controller
         $this->validate($request, [
             'service_name' => 'required',
             'service_description' => 'required',
-            'service_price' => 'required'
+            'service_price' => 'required',
+            'service_length' => 'required'
         ]);
         $services = new Service;
         $services->service_name = $request->input('service_name');
         $services->service_description = $request->input('service_description');
         $services->service_price = $request->input('service_price');
+        $services->service_length = $request->input('service_length');
         $services->save();
         return redirect('service/create')->with('success', 'Service Created');
     }
-
+    
     /**
      * Display the specified resource.
      *
@@ -94,12 +96,14 @@ class ServiceController extends Controller
         $this->validate($request, [
             'service_name' => 'required',
             'service_description' => 'required',
-            'service_price' => 'required'
+            'service_price' => 'required',
+            'service_length' => 'required'
         ]);
         $services = Service::find($id);
         $services->service_name = $request->input('service_name');
         $services->service_description = $request->input('service_description');
         $services->service_price = $request->input('service_price');
+        $services->service_length = $request->input('service_length');
         $services->save();
         return redirect('service')->with('success', 'Service Updated');
     }

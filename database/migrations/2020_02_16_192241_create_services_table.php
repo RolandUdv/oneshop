@@ -19,6 +19,7 @@ class CreateServicesTable extends Migration
             $table->string('service_name');
             $table->mediumText('service_description');
             $table->integer('service_price');
+            $table->tinyInteger('service_length');
             $table->timestamps();
         });
     }

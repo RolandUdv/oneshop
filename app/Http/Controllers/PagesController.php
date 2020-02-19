@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\Store;
 use App\Staff;
+use App\Service;
 // use App\Service;
 // use App\Booking;
 
@@ -15,11 +16,11 @@ class PagesController extends Controller
 {
     public function index(){
         $title = "Welcome";
-        $categories = Category::all();
-        $categories = Category::orderBy('category_id', 'asc')->take(5)->get(); // LIMIT 5
+        $services = Service::all();
+        $services = Service::orderBy('service_id', 'asc')->take(5)->get(); // LIMIT 5
 
         return view('pages.index', ['title' => $title,
-        'categories' => $categories]);
+        'services' => $services]);
 
         // $stores = DB::table('stores')->paginate(1);
         // return view('stores.smallstore', ['stores' => $stores]);
@@ -125,6 +126,5 @@ class PagesController extends Controller
     public function users(){
         return view('admin.users');;
     }
-
-
+    
 }
