@@ -1,15 +1,5 @@
 @extends('layouts.admin')
 @section('content')
-@include('layouts.admin_widgets')
-<p> hi</p>
-
-
-
-
-
-
-
-
-
+<h3>{{$title}}</h3>
 
 @endsection

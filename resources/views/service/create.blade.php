@@ -10,11 +10,11 @@
     {!! Form::open(['action' => 'ServiceController@store', 'method' => 'POST']) !!}
         <div class="form-group">
             {{Form::label('service_name', 'Service Name')}}
-            {{Form::text('service_name', 'Haircut', ['class' => 'form-control', 'placeholder' => 'Service Name'])}}
+            {{Form::text('service_name', '', ['class' => 'form-control', 'placeholder' => 'Service Name'])}}
         </div>
         <div class="form-group">
             {{Form::label('service_description', 'Service Description')}}
-            {{Form::textarea('service_description', 'Very beautiful and wonderful service is being offered', ['class' => 'form-control', 'placeholder' => 'Service Description'])}}
+            {{Form::textarea('service_description', '', ['class' => 'form-control', 'placeholder' => 'Service Description'])}}
         </div>
         <div class="form-group">
             {{Form::label('service_price', 'Service Price')}}

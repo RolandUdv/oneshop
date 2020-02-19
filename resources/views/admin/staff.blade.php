@@ -48,8 +48,8 @@
                                     <td>{{$staf->created_at}}</td>
                                     <td>{{$staf->updated_at}}</td>
                                     <td>
-                                        <i class="fas fa-edit"></i>
-                                        <a href="staff/{{$staf->staff_id}}/edit">Edit</a>
+                                        <a href="staff/{{$staf->staff_id}}/edit">
+                                            <i class="fas fa-edit"></i>Edit</a>
                                     </td>
                                     <td>
                                         {{-- <i class="fas fa-trash"></i> --}}

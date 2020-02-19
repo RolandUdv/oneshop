@@ -25,8 +25,8 @@
                                     <td>{{$category->category_id}}</td>
                                     <td>{{$category->category_name}}</td>
                                     <td>
-                                        <i class="fas fa-edit"></i>
-                                        <a href="categories/{{$category->category_id}}/edit">Edit</a>
+                                        <a href="categories/{{$category->category_id}}/edit">
+                                            <i class="fas fa-edit"></i>Edit</a>
                                     </td>
                                     <td>
                                         {{-- <i class="fas fa-trash"></i> --}}

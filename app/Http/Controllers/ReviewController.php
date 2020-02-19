@@ -14,8 +14,14 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        $reviews = Review::all();
-        return view('pages.index')->with('reviews', $reviews);
+        $title = "Reviews";
+        // $bookings = Booking::orderBy('booking_id', 'asc')->paginate(10);
+        // $bookingscount = Booking::count('booking_id');
+
+        return view('admin.reviews')->with('title', $title);
+        
+        // $reviews = Review::all();
+        // return view('pages.index')->with('reviews', $reviews);
     }
 
     /**

@@ -6,6 +6,11 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+.fa, .fas, .far {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
 a {
   text-decoration: none;
 }
@@ -350,12 +355,13 @@ a:link {
     color: #868e96;
   }
   
+  /* navbar menu colours */
   #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item > .nav-link {
-    color: #868e96;
+    color: #bdbdbd;
   }
   
   #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item > .nav-link:hover {
-    color: #adb5bd;
+    color: #f3f3f3;
   }
   
   #mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item .sidenav-second-level > li > a,

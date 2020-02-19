@@ -39,13 +39,14 @@ Route::get('/users', 'UserController@users');
 
 Route::get('/staff', 'StaffController@staff');
 Route::get('/service', 'ServiceController@service');
+Route::get('/bookings', 'BookingController@bookings');
 
 
 // Route::get('/staff', 'StaffController@staff');
 //Route::resource('posts', 'PostsController');  //this has been deleted
-// Route::resource('booking', 'BookingController');
+Route::resource('bookings', 'BookingController');
 Route::resource('categories', 'CategoryController');
-// Route::resource('reviews', 'ReviewController');
+Route::resource('reviews', 'ReviewController');
 Route::resource('users', 'UserController');
 Route::resource('service', 'ServiceController');
 Route::resource('staff', 'StaffController');

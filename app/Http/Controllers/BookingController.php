@@ -14,7 +14,15 @@ class BookingController extends Controller
      */
     public function index()
     {
-        //
+        $title = "Bookings";
+        // $bookings = Booking::orderBy('booking_id', 'asc')->paginate(10);
+        // $bookingscount = Booking::count('booking_id');
+
+        return view('admin.bookings')->with('title', $title);
+
+        // return view('admin.bookings', ['title' => $title,
+        // 'bookings' => $bookings,
+        // 'bookingscount' => $bookingscount]);
     }
 
     /**

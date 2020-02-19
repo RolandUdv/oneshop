@@ -15,7 +15,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $title = "Users";
+        // $bookings = Booking::orderBy('booking_id', 'asc')->paginate(10);
+        // $bookingscount = Booking::count('booking_id');
+
+        return view('admin.users')->with('title', $title);
     }
 
     /**

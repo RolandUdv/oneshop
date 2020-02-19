@@ -31,8 +31,8 @@
                                     <td>{{ str_limit($service->service_description, 100, '...')}}</td>
                                     <td>£ {{$service->service_price}}</td>
                                     <td>
-                                        <i class="fas fa-edit"></i>
-                                        <a href="service/{{$service->service_id}}/edit">Edit</a>
+                                        <a href="service/{{$service->service_id}}/edit">
+                                            <i class="fas fa-edit"></i>Edit</a>
                                     </td>
                                     <td>
                                         {{-- <i class="fas fa-trash"></i> --}}

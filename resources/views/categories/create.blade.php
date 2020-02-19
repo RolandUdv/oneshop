@@ -10,7 +10,7 @@
     {!! Form::open(['action' => 'CategoryController@store', 'method' => 'POST']) !!}
         <div class="form-group">
             {{Form::label('category_name', 'Category Name')}}
-            {{Form::text('category_name', 'Barber', ['class' => 'form-control', 'placeholder' => 'Category Name'])}}
+            {{Form::text('category_name', '', ['class' => 'form-control', 'placeholder' => 'Category Name'])}}
         </div>
         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
     {!! Form::close() !!}

@@ -54,7 +54,7 @@
                 </ul>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{ url('/reviews')}}">
                     <i class="fas fa-star"></i>
                     <span class="nav-link-text">Reviews</span>
                 </a>

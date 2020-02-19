@@ -1,5 +1,5 @@
             <!-- Icon Cards-->
-            <div class="content-wrapper">
+            {{-- <div class="content-wrapper"> --}}
                 <div class="container-fluid">
                     <div class="row">
                         {{-- Messages --}}
@@ -89,5 +89,5 @@
 
 
                     </div>
-                </div>
-            </div>
+                {{-- </div> --}}
+            {{-- </div> --}}
