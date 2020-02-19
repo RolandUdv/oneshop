@@ -101,9 +101,9 @@ class PagesController extends Controller
 
 // Admin pages
     public function admin(){
-        // $title = 'Admin';
-        // return view('pages.admin')->with('title', $title);;
-        return view('pages.admin');;
+        $title = 'Dashboard';
+        return view('pages.admin')->with('title', $title);;
+        // return view('pages.admin');;
     }
 
     public function bookings(){

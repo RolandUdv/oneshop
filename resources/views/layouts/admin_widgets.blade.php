@@ -2,6 +2,7 @@
             {{-- <div class="content-wrapper"> --}}
                 <div class="container-fluid">
                     <div class="row">
+
                         {{-- Messages --}}
 
                         {{-- <div class="col-xl-3 col-sm-6 mb-3">
@@ -35,7 +36,7 @@
                                     </div>
                                     <div class="mr-5">11 New User Registrations!</div>
                                 </div>
-                                <a class="card-footer text-white clearfix small z-1" href="#">
+                                <a class="card-footer text-white clearfix small z-1" href="{{ url('/users')}}">
                                     <span class="float-left">View Details</span>
                                     <span class="float-right">
                                         <i class="fa fa-angle-right"></i>
@@ -59,7 +60,7 @@
                                     </div>
                                     <div class="mr-5">123 New Bookings!</div>
                                 </div>
-                                <a class="card-footer text-white clearfix small z-1" href="#">
+                                <a class="card-footer text-white clearfix small z-1" href="{{ url('/bookings')}}">
                                     <span class="float-left">View Bookings</span>
                                     <span class="float-right">
                                         <i class="fa fa-angle-right"></i>

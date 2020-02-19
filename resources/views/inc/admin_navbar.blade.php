@@ -60,7 +60,7 @@
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-                <a class="nav-link" href="{{ url('/admin-profile')}}">
+                <a class="nav-link" href="{{ url('#')}}">
                     <i class="fas fa-user-edit"></i>
                     <span class="nav-link-text">Profile</span>
                 </a>
@@ -73,10 +73,10 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseSettingsComponents">
                     <li>
-                        <a href="{{ url('/users')}}">Homepage</a>
+                        <a href="{{ url('#')}}">Homepage</a>
                     </li>
                     <li>
-                        <a href="{{ url('/staff')}}">Other pages</a>
+                        <a href="{{ url('#')}}">Other pages</a>
                     </li>
                 </ul>
             </li>

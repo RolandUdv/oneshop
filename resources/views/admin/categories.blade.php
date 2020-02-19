@@ -32,14 +32,13 @@
                                         {{-- <i class="fas fa-trash"></i> --}}
                                         {!!Form::open(['action' => ['CategoryController@destroy', $category->category_id], 'method' => 'POST', 'class' => 'class-right']) !!}
                                             {{Form::hidden('_method', 'DELETE')}}
-                                            {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
-                                        {!!Form::close()!!}
+                                            @include('inc.modal_delete')
                                     </td>
                                 </tr>
                                 @endforeach
                                 
                                 @else
-                                <p>No Services members found</p>
+                                <p>There are 0 Categories</p>
                                 @endif
 
                         </tbody>

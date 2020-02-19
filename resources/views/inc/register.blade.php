@@ -25,7 +25,7 @@
                 </div>
                 <div class="form-group text-center">
                     <label class="checkbox-inline"><input type="checkbox" required="required"> I accept the <strong><a
-                            href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></strong></label></br>
+                            href="{{ url('#')}}">Terms of Use</a> &amp; <a href="{{ url('#')}}">Privacy Policy</a></strong></label></br>
                 {{-- </div> --}}
                 {{-- <div class="form-group"> --}}
                         <button class="btn btn-lg btn-primary" type="submit">Register Now</button>
