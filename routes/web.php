@@ -90,3 +90,7 @@ Route::get('/store{id}', function ($id, $store_name) {
     //return view('profile');
 });
 */
+Auth::routes();
+
+Route::get('/', 'HomeController@index');
+// ->name('home');

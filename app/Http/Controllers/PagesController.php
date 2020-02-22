@@ -11,9 +11,13 @@ use App\Service;
 // use App\Service;
 use App\Booking;
 
-
 class PagesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'about', 'contact', 'services', 'scan']]);
+    }
+
     public function index(){
         $title = "Welcome";
         $services = Service::all();

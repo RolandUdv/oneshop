@@ -7,7 +7,6 @@
 </div>
 
 
-
 <div class="container">
     <div class="col-md-12 text-center">
         <!-- justify-content-center, brings content to the center -->
