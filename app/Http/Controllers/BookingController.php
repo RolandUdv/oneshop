@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Booking;
+use App\Service;
+use App\Users;
 use Carbon\Carbon;
 
 class BookingController extends Controller
@@ -40,9 +42,27 @@ class BookingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create() //create
     {
-        //
+        // $title = "Make a new Booking";
+        // return view('services.create')->with('title', $title);
+        $title = 'Create Booking';
+        $bookings = new Booking;
+        $serviceid = Service::pluck('service_name', 'service_id');
+        // $userid = Booking::pluck('username', 'user_id');
+
+        // $items = Items::pluck('service_id', 'service_name');
+        // $items = Items::all(['service_id', 'service_name']);
+        // $items = Items::pluck(['service_id', 'service_name']);
+        // $services = new Service;
+        // $bookings = Booking::find($id);
+        // $services = Service::find($id);
+        return view('bookings.create', ['title' => $title,
+        'bookings' => $bookings,
+        'serviceid' => $serviceid
+        // 'userid' => $userid
+        ]);
+        // return view('services.create')->with('title', $title);
     }
 
     /**
@@ -53,7 +73,26 @@ class BookingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $this->validate($request, [
+        //     'created_at' => 'required',
+        //     'updated_at' => 'required',
+        //     'service_id' => 'required',
+        //     'service_price' => 'required',
+        //     'service_length' => 'required'
+        // ]);
+        $bookings = new Booking;
+        // $bookings = Booking::find($id);
+        // $services = Service::find($id);
+        // $bookings->created_at = $request->input('created_at');
+        // $bookings->created_at = $request->input('updated_at');
+        // $bookings->service_id = $request->input('service_id');
+        // $bookings->service_id = $request->input('service_id');
+        // $bookings->updated_at = $request->input('updated_at');
+        // $bookings->service_id = $request->input('service_id');
+        // $bookings->service_price = $request->input('service_price');
+        // $bookings->service_length = $request->input('service_length');
+        $bookings->save();
+        return redirect('bookings/create')->with('success', 'Booked slot');
     }
 
     /**
@@ -64,7 +103,8 @@ class BookingController extends Controller
      */
     public function show($id)
     {
-        //
+        $bookings = Booking::find($id);
+        return view('admin.bookings')->with('bookings', $bookings);
     }
 
     /**
@@ -98,8 +138,8 @@ class BookingController extends Controller
         //     'service_length' => 'required'
         // ]);
         $bookings = Booking::find($id);
-        $bookings->created_at = $request->input('created_at');
-        // $bookings->updated_at = $request->input('updated_at');
+        // $bookings->created_at = $request->input('created_at');
+        $bookings->updated_at = $request->input('updated_at');
         // $bookings->service_id = $request->input('service_id');
         // $bookings->service_price = $request->input('service_price');
         // $bookings->service_length = $request->input('service_length');

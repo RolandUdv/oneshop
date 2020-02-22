@@ -26,12 +26,12 @@
 <div class="card mb-3">
     <div class="card-header">
         <i class="fa fa-table"></i> {{$title}} Table
-        <a class="btn btn-primary disabled float-right" href="{{ url('service/create')}}" role="button">Add New</a>
+        <a class="btn btn-primary float-right" href="{{ url('bookings/create')}}" role="button">Add New</a> {{-- disabled --}}
     </br>
-        <span class="badge badge-pill badge-info text-white">B ID = Booking ID</span>
-        <span class="badge badge-pill badge-info text-white">U ID = User ID</span>
-        <span class="badge badge-pill badge-success">Less than 7 days old</span>
-        <span class="badge badge-pill badge-warning text-black">More than 7 days old</span>
+        <h5 class="float-left px-1"><span class="badge badge-pill badge-info text-white">B ID = Booking ID</span></h5>
+        <h5 class="float-left px-1"><span class="badge badge-pill badge-info text-white text-left">U ID = User ID</span></h5>
+        <h5 class="float-left px-1"><span class="badge badge-pill badge-success">Less than 7 days old</span></h5>
+        <h5 class="float-left px-1"><span class="badge badge-pill badge-warning text-black">More than 7 days old</span></h5>
     </div>
 
     <div class="card-body">

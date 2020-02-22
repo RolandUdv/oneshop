@@ -32,7 +32,10 @@ Route::get('/store', 'PagesController@store');
 
 // admin
 // Route::get('/bookings', 'PagesController@bookings');
-Route::get('/bookings', 'PagesController@bookings');
+// Route::get('/bookings', 'PagesController@bookings');
+// Route::get('/services/create', 'BookingController@create');
+// Route::get('/services/storebooking', 'PagesController@storebooking');
+
 Route::get('/categories', 'CategoryController@categories');
 Route::get('/admin/staff', 'PagesController@staff');
 Route::get('/users', 'UserController@users');
@@ -44,6 +47,8 @@ Route::get('/bookings', 'BookingController@bookings');
 
 // Route::get('/staff', 'StaffController@staff');
 //Route::resource('posts', 'PostsController');  //this has been deleted
+Route::resource('pages', 'PagesController');
+// Route::resource('service', 'BookingController');
 Route::resource('bookings', 'BookingController');
 Route::resource('categories', 'CategoryController');
 Route::resource('reviews', 'ReviewController');

@@ -9,7 +9,7 @@ use App\Store;
 use App\Staff;
 use App\Service;
 // use App\Service;
-// use App\Booking;
+use App\Booking;
 
 
 class PagesController extends Controller
@@ -62,8 +62,22 @@ class PagesController extends Controller
 
     public function services(){
         $title = 'Services';
-        return view('pages.services')->with('title', $title);;
+
+        $bookings = Booking::all();
+        $services = Service::all();
+        //$services = Service::orderBy('service_id', 'asc')->take(5)->get(); // LIMIT 5
+
+        return view('pages.services', ['title' => $title,
+        'bookings' => $bookings,
+        'services' => $services]);
+
+        // return view('pages.services')->with('title', $title);;
     }
+
+
+
+
+
 
     public function about(){
         $title = 'About Us';
