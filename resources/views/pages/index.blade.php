@@ -75,9 +75,10 @@
       
           <div class="col-lg-3 col-md-4 col-6">
             <a href="#" class="d-block mb-4 h-100">
-                  <img class="img-fluid img-thumbnail" src="https://lh3.googleusercontent.com/proxy/3kcmCBnUK4NgNRp7dSMCJllZ9JraKCX7OHQhjApDIEPcMsFU8P9Idb9vXUlYKcGvcqQSpTb5EJDeec1qTN26_99QsNe7W89ERzdMnG3lBGRW1XVhQR3lPvsEBM5UkdSegMez_o-MspzX1dMZaXqt2147Hac" alt="">
+                  <img class="img-fluid img-thumbnail" src="https://lh3.googleusercontent.com/proxy/phZiL_yTHH5A9F2tNnMOxivn03Q19WZgtNFcQdaUi0pViUp6bQ-DQhe1vvm4e2Q6giVTEwTwB8pGgmigLEOR4hxBkyz0yCPVSjmPKXNEhtOJvMOZDjdDP3gFS4vCZMCtzvVPHZV2Fux_VBs" alt="">
                 </a>
           </div>
+          {{-- https://img77.uenicdn.com/image/upload/v1542319549/service_images/39d0efbb-e6ad-4860-a801-46a8aad6b87f.jpg --}}
           <div class="col-lg-3 col-md-4 col-6">
             <a href="#" class="d-block mb-4 h-100">
                   <img class="img-fluid img-thumbnail" src="https://www.k9-freestylers.com/wp-content/uploads/2017/10/shutterstock_185540867_1477049627-400x300.jpg" alt="">

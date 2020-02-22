@@ -19,8 +19,9 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+                    {!!Form::close()!!}
                 </div>
             </div>
         </div>
     </div>
-    {!!Form::close()!!}
+    

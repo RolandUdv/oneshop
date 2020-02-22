@@ -65,7 +65,9 @@
                                         {{-- <i class="fas fa-trash"></i> --}}
                                         {!!Form::open(['action' => ['ServiceController@destroy', $service->service_id], 'method' => 'POST', 'class' => 'class-right']) !!}
                                             {{Form::hidden('_method', 'DELETE')}}
-                                            @include('inc.modal_delete')
+                                            {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+                                        {!!Form::close()!!}
+                                            {{-- @include('inc.modal_delete') --}}
                                     </td>
                                     @elseif (\Auth::user()->isStaff == '1') 
                                     @endif

@@ -38,7 +38,13 @@
                     <span class="nav-link-text">Bookings</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+                <a class="nav-link" href="{{ url('/users')}}">
+                    <i class="fas fa-users"></i>
+                    <span class="nav-link-text">Users</span>
+                </a>
+            </li>
+            {{-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseUserComponents"
                     data-parent="#exampleAccordion">
                     <i class="fas fa-users"></i>
@@ -46,13 +52,13 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseUserComponents">
                     <li>
-                        <a href="{{ url('/users')}}">Customers</a>
+                        <a href="{{ url('/users')}}">Users</a>
                     </li>
                     <li>
                         <a href="{{ url('/staff')}}">Staff</a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
                 <a class="nav-link" href="{{ url('/reviews')}}">
                     <i class="fas fa-star"></i>

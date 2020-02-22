@@ -82,16 +82,20 @@
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form> --}}
-            {{-- @guest
-            @if (Route::has('Logout')) --}}
+            {{-- @guest --}}
+            
+            {{-- @if (Route::has('logout')) --}}
+            {{-- @if(\Auth::user()->isStaff == '1')  --}}
             <li class="nav-item">
                 <a class="nav-link" href="{{ url('/admin') }}">Admin</a>
             </li>
-            {{-- @endif
-            @endguest --}}
-        </ul>
+            
+            {{-- @else --}}
+            {{-- @endif --}}
+            {{-- @endguest --}}
+        {{-- </ul>
     </div>
-</nav>
+</nav> --}}
 
 
 

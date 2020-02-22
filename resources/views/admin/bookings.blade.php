@@ -106,10 +106,12 @@
                             {{-- <i class="fas fa-trash"></i> --}}
                         @if  (\Auth::user()->isAdmin == '1') 
                         <td>
-                            {!!Form::open(['action' => ['ServiceController@destroy', $booking->service_id], 'method' =>
+                            {!!Form::open(['action' => ['BookingController@destroy', $booking->service_id], 'method' =>
                             'POST', 'class' => 'class-right']) !!}
-                            {{Form::hidden('_method', 'DELETE')}}
-                            @include('inc.modal_cancel')
+                                {{Form::hidden('_method', 'DELETE')}}
+                                {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+                            {!!Form::close()!!}
+                            {{-- @include('inc.modal_cancel') --}}
                         </td>
                         @elseif (\Auth::user()->isStaff == '1') 
                         @endif
@@ -151,10 +153,12 @@
                             {{-- <i class="fas fa-trash"></i> --}}
                         @if  (\Auth::user()->isAdmin == '1') 
                         <td>
-                            {!!Form::open(['action' => ['ServiceController@destroy', $booking->service_id], 'method' =>
+                            {!!Form::open(['action' => ['BookingController@destroy', $booking->service_id], 'method' =>
                             'POST', 'class' => 'class-right']) !!}
-                            {{Form::hidden('_method', 'DELETE')}}
-                            @include('inc.modal_cancel')
+                                {{Form::hidden('_method', 'DELETE')}}
+                                {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+                            {!!Form::close()!!}
+                            {{-- @include('inc.modal_cancel') --}}
                         </td>
                         @elseif (\Auth::user()->isStaff == '1') 
                         @endif

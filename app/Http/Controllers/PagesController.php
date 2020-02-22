@@ -16,8 +16,8 @@ class PagesController extends Controller
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'about', 'contact', 'services', 'scan']]);
-        // $this->middleware('1', ['except' => ['index', '/about', 'contact', 'profile', 'services', 'scan', 'admin']]);
-        $this->middleware('1', ['except' => ['index', 'about', 'contact', 'services', 'scan']]);
+        // $this->middleware('auth', ['except' => ['index', 'about', 'contact', 'services', 'scan', 'favorites', 'profile']]);
+        $this->middleware('1', ['except' => ['index', 'about', 'contact', 'services', 'scan', 'favorites', 'profile']]);
 
     }
 
@@ -107,11 +107,13 @@ class PagesController extends Controller
     }
 
     public function favorites(){
+        // $this->middleware('auth');
         $title = 'Favorites page / Purchase history';
         return view('pages.favorites', compact('title'));
     }
 
     public function profile(){
+        // $this->middleware('auth');
         $title = 'Profile page';
         return view('pages.profile')->with('title', $title);;
     }

@@ -123,6 +123,12 @@ class BookingController extends Controller
     {
         $title = 'Edit Booking';
         $bookings = Booking::find($id);
+
+        // if(auth()->user()->isStaff =='1'){
+        //     return view('admin.bookings', ['title' => $title,
+        //     'bookings' => $bookings]);
+        // }
+
         return view('bookings.edit', ['title' => $title,
         'bookings' => $bookings]);
     }
