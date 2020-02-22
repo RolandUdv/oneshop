@@ -5,7 +5,11 @@
         <div class="card mb-3">
             <div class="card-header">
                 <i class="fa fa-table"></i> {{$title}} Table 
+                @if  (\Auth::user()->isAdmin == '1') 
                 <a class="btn btn-primary float-right" href="{{ url('categories/create')}}" role="button">Add New</a>
+                @elseif (\Auth::user()->isStaff == '1') 
+                <a class="btn btn-primary float-right disabled" href="{{ url('categories/create')}}" role="button">Add New</a>
+                @endif
                 </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -14,8 +18,11 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Category Name</th>
+                                @if  (\Auth::user()->isAdmin == '1') 
                                 <th>Edit</th>
                                 <th>Delete</th>
+                                @elseif (\Auth::user()->isStaff == '1') 
+                                @endif
                             </tr>
                         </thead>
                         <tbody>
@@ -24,16 +31,20 @@
                                 <tr>
                                     <td>{{$category->category_id}}</td>
                                     <td>{{$category->category_name}}</td>
+                                    @if  (\Auth::user()->isAdmin == '1') 
                                     <td>
                                         <a href="categories/{{$category->category_id}}/edit">
                                             <i class="fas fa-edit"></i>Edit</a>
                                     </td>
                                     <td>
                                         {{-- <i class="fas fa-trash"></i> --}}
+                                    
                                         {!!Form::open(['action' => ['CategoryController@destroy', $category->category_id], 'method' => 'POST', 'class' => 'class-right']) !!}
                                             {{Form::hidden('_method', 'DELETE')}}
                                             @include('inc.modal_delete')
                                     </td>
+                                    @elseif (\Auth::user()->isStaff == '1') 
+                                    @endif
                                 </tr>
                                 @endforeach
                                 

@@ -44,3 +44,9 @@
         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
     {!! Form::close() !!}
 @endsection
+
+@section('script')
+<script>
+
+</script>
+@endsection

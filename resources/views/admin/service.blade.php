@@ -7,7 +7,11 @@
         <div class="card mb-3">
             <div class="card-header">
                 <i class="fa fa-table"></i> {{$title}} Table 
+                @if  (\Auth::user()->isAdmin == '1') 
                 <a class="btn btn-primary float-right" href="{{ url('service/create')}}" role="button">Add New</a>
+                @elseif (\Auth::user()->isStaff == '1') 
+                <a class="btn btn-primary float-right disabled" href="{{ url('service/create')}}" role="button">Add New</a>
+                @endif
                 </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -19,8 +23,11 @@
                                 <th>Description</th>
                                 <th>Price</th>
                                 <th>Length</th>
+                                @if  (\Auth::user()->isAdmin == '1') 
                                 <th>Edit</th>
-                                <th>Delete</th>                               
+                                <th>Delete</th>   
+                                @elseif (\Auth::user()->isStaff == '1') 
+                                @endif                            
                             </tr>
                         </thead>
                         <tbody>
@@ -48,6 +55,8 @@
                                     @elseif($service->service_length == 7)
                                         <td>2hrs</td>
                                     @endif
+
+                                    @if  (\Auth::user()->isAdmin == '1') 
                                     <td>
                                         <a href="service/{{$service->service_id}}/edit">
                                             <i class="fas fa-edit"></i>Edit</a>
@@ -58,6 +67,8 @@
                                             {{Form::hidden('_method', 'DELETE')}}
                                             @include('inc.modal_delete')
                                     </td>
+                                    @elseif (\Auth::user()->isStaff == '1') 
+                                    @endif
                                 </tr>
                                 @endforeach
                                 

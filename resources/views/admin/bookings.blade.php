@@ -26,7 +26,11 @@
 <div class="card mb-3">
     <div class="card-header">
         <i class="fa fa-table"></i> {{$title}} Table
+        @if (\Auth::user()->isAdmin == '1') 
         <a class="btn btn-primary float-right" href="{{ url('bookings/create')}}" role="button">Add New</a> {{-- disabled --}}
+        @elseif (\Auth::user()->isStaff == '1') 
+        <a class="btn btn-primary float-right disabled" href="{{ url('bookings/create')}}" role="button">Add New</a> {{-- disabled --}}
+        @endif
     </br>
         <h5 class="float-left px-1"><span class="badge badge-pill badge-info text-white">B ID = Booking ID</span></h5>
         <h5 class="float-left px-1"><span class="badge badge-pill badge-info text-white text-left">U ID = User ID</span></h5>
@@ -52,7 +56,10 @@
                         <th>Created At</th>
                         <th>Updated At</th>
                         <th>Edit</th>
+                        @if (\Auth::user()->isAdmin == '1') 
                         <th>Delete</th>
+                        @elseif (\Auth::user()->isStaff == '1') 
+                        @endif
                     </tr>
                 </thead>
                 <tbody>
@@ -95,13 +102,18 @@
                             <a href="bookings/{{$booking->booking_id}}/edit">
                                 <i class="fas fa-edit"></i>Edit</a>
                         </td>
-                        <td>
+                        
                             {{-- <i class="fas fa-trash"></i> --}}
+                        @if  (\Auth::user()->isAdmin == '1') 
+                        <td>
                             {!!Form::open(['action' => ['ServiceController@destroy', $booking->service_id], 'method' =>
                             'POST', 'class' => 'class-right']) !!}
                             {{Form::hidden('_method', 'DELETE')}}
                             @include('inc.modal_cancel')
                         </td>
+                        @elseif (\Auth::user()->isStaff == '1') 
+                        @endif
+
                         @else {{-- If it's more than 7 days old, display it in yellow --}}
                         <td class="bg-warning">{{$booking->booking_id}}</td>
                         <td class="bg-warning">{{$booking->user_id}}</td>
@@ -135,13 +147,17 @@
                             <a {{--class="btn disabled"--}} href="bookings/{{$booking->booking_id}}/edit">
                                 <i class="fas fa-edit"></i>Edit</a>
                         </td>
-                        <td>
+                        
                             {{-- <i class="fas fa-trash"></i> --}}
+                        @if  (\Auth::user()->isAdmin == '1') 
+                        <td>
                             {!!Form::open(['action' => ['ServiceController@destroy', $booking->service_id], 'method' =>
                             'POST', 'class' => 'class-right']) !!}
                             {{Form::hidden('_method', 'DELETE')}}
                             @include('inc.modal_cancel')
                         </td>
+                        @elseif (\Auth::user()->isStaff == '1') 
+                        @endif
                         @endif
                         
 

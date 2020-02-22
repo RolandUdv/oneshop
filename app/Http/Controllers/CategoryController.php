@@ -10,6 +10,7 @@ class CategoryController extends Controller
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'about', 'contact', 'services', 'scan']]);
+        $this->middleware('1');
     }
 /**
      * Display a listing of the resource.

@@ -93,4 +93,10 @@ Route::get('/store{id}', function ($id, $store_name) {
 Auth::routes();
 
 Route::get('/', 'HomeController@index');
+
+// Route::get('/', 'HomeController@index');
+// Route::get('/admin', 'HomeController@admin');
+Route::get('/isAdmin', function () {
+    //
+    })->middleware('1');
 // ->name('home');

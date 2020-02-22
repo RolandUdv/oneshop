@@ -11,6 +11,11 @@ class StaffController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        // $this->middleware('1', ['except' => ['staff']]);
+        // $this->middleware('1', ['except' => ['index']]);
+
+        $this->middleware('1');
+        // $this->middleware('isAdmin');
     }
 /**
      * Display a listing of the resource.

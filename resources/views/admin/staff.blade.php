@@ -7,7 +7,11 @@
 <div class="card mb-3">
     <div class="card-header">
         <i class="fa fa-table"></i> {{$title}} Table
+        @if  (\Auth::user()->isAdmin == '1') 
         <a class="btn btn-primary float-right" href="{{ url('staff/create')}}" role="button">Add New</a>
+        @elseif (\Auth::user()->isStaff == '1') 
+        <a class="btn btn-primary float-right disabled" href="{{ url('staff/create')}}" role="button">Add New</a>
+        @endif
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -24,8 +28,11 @@
                         <th>Phone</th>
                         <th>Registrated at</th>
                         <th>Last Updated</th>
+                        @if  (\Auth::user()->isAdmin == '1') 
                         <th>Edit</th>
                         <th>Delete</th>
+                        @elseif (\Auth::user()->isStaff == '1') 
+                        @endif
                     </tr>
                 </thead>
                 <tbody>
@@ -47,6 +54,8 @@
                         <td>{{$staf->phone_no}}</td>
                         <td>{{$staf->created_at}}</td>
                         <td>{{$staf->updated_at}}</td>
+
+                        @if  (\Auth::user()->isAdmin == '1') 
                         <td>
                             <a href="staff/{{$staf->staff_id}}/edit">
                                 <i class="fas fa-edit"></i>Edit</a>
@@ -58,6 +67,8 @@
                             {{Form::hidden('_method', 'DELETE')}}
                             @include('inc.modal_delete')
                         </td>
+                        @elseif (\Auth::user()->isStaff == '1') 
+                        @endif
                     </tr>
                     @endforeach
 

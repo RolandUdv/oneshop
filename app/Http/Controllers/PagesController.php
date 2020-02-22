@@ -16,6 +16,9 @@ class PagesController extends Controller
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'about', 'contact', 'services', 'scan']]);
+        // $this->middleware('1', ['except' => ['index', '/about', 'contact', 'profile', 'services', 'scan', 'admin']]);
+        $this->middleware('1', ['except' => ['index', 'about', 'contact', 'services', 'scan']]);
+
     }
 
     public function index(){
@@ -120,6 +123,7 @@ class PagesController extends Controller
 
 // Admin pages
     public function admin(){
+        $this->middleware('1');
         $title = 'Dashboard';
         return view('pages.admin')->with('title', $title);;
         // return view('pages.admin');;

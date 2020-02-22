@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Service;
+use App\Staff;
 class HomeController extends Controller
 {
     /**
@@ -23,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $title = "Hello";
+        $title = "Welcome back";
         $services = Service::all();
         $services = Service::orderBy('service_id', 'asc')->take(5)->get(); // LIMIT 5
         return view('pages.index', ['title' => $title,
@@ -31,4 +32,18 @@ class HomeController extends Controller
         // return view('pages.index', ['title' => $title]);
         // return view('pages.index');
     }
+
+    public function admin()
+    {
+        $title = 'Welcome back';
+        $user = Users::find($id);
+        if($user->isAdmin == 1)
+        {
+            return view('/admin');
+        }else{
+            return view('/');
+        }
+        // return view('pages.index');
+    }
+
 }

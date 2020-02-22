@@ -9,7 +9,7 @@ class Users extends Model
     // table name
     protected $table = 'users';
     // primary key
-    public $primaryKey = 'users_id';
+    public $primaryKey = 'id';
     //
     //public $review = 'category_name';
     // timestamps
