@@ -7,7 +7,26 @@
 
 <h3>{{$title}}</h3>
 
+<div class="form-group">
+    <div class='col-sm-6'>
+        <div class='input-group date' id='datetimepicker1'>
+            <input type='text' class="form-control" />
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
     {!! Form::open(['action' => 'StaffController@store', 'method' => 'POST']) !!}
+        {{-- <div class="form-group">
+            {{Form::label('test', 'TEST')}}
+            {{Form::text('', '', ['class' => 'form-control input-group date', 'id' => 'datetimepicker1', 'placeholder' => ''])}}
+        </div> --}}
+        {{-- <div class="form-group">
+            {{Form::label('username', 'Username')}}
+            {{Form::input('dateTime-local', 'username', '', ['class' => 'form-control', 'placeholder' => 'Username'])}}
+        </div> --}}
         <div class="form-group">
             {{Form::label('admin_rights', 'Admin rights')}}
             {{Form::select('admin_rights', array('0' => 'No', '1' => 'Yes'))}}
@@ -24,6 +43,10 @@
             {{Form::label('surname', 'Surname')}}
             {{Form::text('surname', '', ['class' => 'form-control', 'placeholder' => 'Surname'])}}
         </div>
+        {{-- <div class="form-group">
+            {{Form::label('staff_dob', 'Date of Birth')}}
+            {{Form::input('dateTime-local', 'staff_dob', '', ['class' => 'form-control', 'placeholder' => 'Date of Birth'])}}
+        </div> --}}
         <div class="form-group">
             {{Form::label('staff_dob', 'Date of Birth')}}
             {{Form::date('staff_dob', '', ['class' => 'form-control', 'placeholder' => 'Date of Birth'])}}
@@ -47,6 +70,13 @@
 
 @section('script')
 <script>
+
+        $(document).ready(function(){
+        // $(document).ready(function($){
+            // $(function() {
+              $('#datetimepicker1').datetimepicker();
+            });
+        //   });
 
 </script>
 @endsection
