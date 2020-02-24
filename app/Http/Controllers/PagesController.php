@@ -22,12 +22,14 @@ class PagesController extends Controller
     }
 
     public function index(){
-        $title = "Welcome";
+        // $title = "Welcome";
         $services = Service::all();
         $services = Service::orderBy('service_id', 'asc')->take(5)->get(); // LIMIT 5
 
-        return view('pages.index', ['title' => $title,
-        'services' => $services]);
+        // return view('pages.index', ['title' => $title,
+        // 'services' => $services]);
+
+        return view('pages.index', ['services' => $services]);
 
         // $stores = DB::table('stores')->paginate(1);
         // return view('stores.smallstore', ['stores' => $stores]);
@@ -149,6 +151,11 @@ class PagesController extends Controller
 
     public function users(){
         return view('admin.users');;
+    }
+
+    public function generateqr(){
+        $title = 'QR Code generator';
+        return view('admin.generateqr')->with('title', $title);;
     }
     
 }

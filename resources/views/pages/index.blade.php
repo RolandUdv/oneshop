@@ -3,18 +3,22 @@
 @section('content')
 
 <div class="container">
-    <h1 class="text-center">{{$title}} to {{config('app.name', 'Brand')}}</h1><br>
+    {{-- <h1 class="text-center">{{$title}} to {{config('app.name', 'Brand')}}</h1><br> --}}
 </div>
 
 
 <div class="container">
     <div class="col-md-12 text-center">
+    </br>
+    </br>
+        <h1>Most Popular Services</h1>
+    </br>
         <!-- justify-content-center, brings content to the center -->
         @if(count($services) > 0)
         {{-- <div class="btn-toolbar text-center" role="toolbar" aria-label="Toolbar with button groups"> --}}
         {{-- <div class="btn-group btn-group-lg" role="group"> --}}
             @foreach ($services as $service)
-            <a href="{{'#'}}"><button type="button" class="btn btn-secondary"
+            <a href="{{'services'}}"><button type="button" class="btn btn-secondary"
                     style="margin-right:10px; margin-bottom:10px;">{{$service->service_name}}</button></a>
             @endforeach
         {{-- </div> --}}
@@ -64,18 +68,52 @@
 
 <hr class="featurette-divider"><br>
 
+<style>
+.btn-primary {
+    background-color: #ff5764!important;
+    font-size: 20px!important;
+}
+
+.btn-secondary {
+    background-color: #ffbe65!important;
+    /* color: #000000!important; */
+    font-size: 20px!important;
+}
+
+.btn-primary:hover {
+    background-color: #d41a28!important;
+}
+
+.btn-secondary:hover {
+    background-color: #e48a0e!important;
+}
+</style>
+
+<div class="container">
+    <div class="col-md-12 text-center">
+            <a href="{{'services'}}"><button type="button" class="btn btn-lg btn-primary"
+                style="margin-right:10px; margin-bottom:10px;"><h2 class="text-white">BOOK APPOINTMENT</h2></button></a></br>
+                <h2 class="font-weight-bold">OR</h2>
+            <a href="{{'tel:01604123456'}}"><button type="button" class="btn btn-lg btn-secondary"
+                style="margin-right:10px; margin-bottom:10px;"><h2 class="text-white">
+                    <i class="fas fa-phone-alt text-white"></i> CALL US 01604 123456</h2></button></a>
+    </div>
+</div>
+
+
+<hr class="featurette-divider"><br>
+{{-- <hr class="mt-2 mb-5"> --}}
+
 {{-- https://startbootstrap.com/snippets/thumbnail-gallery/ --}}
 <div class="container">
 
-        <h1 class=" text-center text-lg-center mt-4 mb-0">Portfolio</h1>
-      
-        <hr class="mt-2 mb-5">
+        <h1 class="text-center text-lg-center mt-4 mb-0">Portfolio</h1></br></br>
       
         <div class="row text-center text-lg-left">
       
           <div class="col-lg-3 col-md-4 col-6">
             <a href="#" class="d-block mb-4 h-100">
-                  <img class="img-fluid img-thumbnail" src="https://lh3.googleusercontent.com/proxy/phZiL_yTHH5A9F2tNnMOxivn03Q19WZgtNFcQdaUi0pViUp6bQ-DQhe1vvm4e2Q6giVTEwTwB8pGgmigLEOR4hxBkyz0yCPVSjmPKXNEhtOJvMOZDjdDP3gFS4vCZMCtzvVPHZV2Fux_VBs" alt="">
+                  <img class="img-fluid img-thumbnail" src="https://img77.uenicdn.com/image/upload/v1542319549/service_images/39d0efbb-e6ad-4860-a801-46a8aad6b87f.jpg" alt="">
                 </a>
           </div>
           {{-- https://img77.uenicdn.com/image/upload/v1542319549/service_images/39d0efbb-e6ad-4860-a801-46a8aad6b87f.jpg --}}
@@ -96,7 +134,7 @@
                 </a>
           </div>
         </div>
-      
+        </br>
       </div>
 
 @endsection
