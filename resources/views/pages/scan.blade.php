@@ -62,7 +62,7 @@
                     
                     </br>
                     </br>
-                    <small>Credits Lazar Laszlo</small>
+                    {{-- <small>Credits Lazar Laszlo</small> --}}
             </div>
         </div>
 </div>

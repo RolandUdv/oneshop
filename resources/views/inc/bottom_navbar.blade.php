@@ -26,10 +26,14 @@
                 class="material-icons">home</i></a>
             <a class="nav-item nav-link" href="{{ url('/services') }}"><i
                 class="material-icons">shopping_basket</i></a>
-            <a class="nav-item nav-link" href="{{ url('/scan') }}"><i
-                class="material-icons">camera_enhance</i></a>
-            <a class="nav-item nav-link" href="{{ url('/history') }}"><i
-                class="material-icons">history</i></a>
+            <a class="nav-item nav-link" href="{{ url('/scan') }}"><i class="fas fa-qrcode"></i>
+                {{-- {{-- <i
+                class="material-icons">camera_enhance</i> --}}
+            </a>
+            <a class="nav-item nav-link" href="{{ url('/history') }}"><i class="fas fa-history"></i>
+                {{-- <i
+                class="material-icons">history</i> --}}
+            </a>
             <a class="nav-item nav-link" href="{{ url('/profile') }}"><i
                 class="material-icons">account_circle</i></a>
           </nav>

@@ -15,6 +15,7 @@ class Booking extends Model
     public $timestamps = true; // no need for this
 
     public function users(){
-        return $this->belongsTo('App\Users');
+        return $this->belongsTo(Users::class);
     }
+
 }

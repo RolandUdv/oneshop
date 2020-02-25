@@ -116,7 +116,7 @@ p, h1, h2, h3, h4 {
 }
 
 .card .card-image img, .card, .card-action  {
-    border-radius: 20px!important;
+    /* border-radius: 20px!important; */
 }
 
 .container .row {
@@ -125,7 +125,9 @@ p, h1, h2, h3, h4 {
 }
 
 .card {
-    margin-bottom: 1em!important;
+  border-radius: 20px;
+  border: 1px solid #dadada!important; 
+  margin-bottom: 10px!important;
 }
 
 /* currently broken
@@ -135,12 +137,24 @@ p, h1, h2, h3, h4 {
   background-color:  rgb(255, 86, 100)!important;
 }  */
 
-.material-icons{
-    color: rgb(255, 86, 100)!important;
+.fa-qrcode, .fa-history{
+  font-size: 20px;
+}
+
+.material-icons, .fa-qrcode, .fa-history{
+  color: rgb(255, 86, 100)!important;
 }
 
 .material-icons:hover{
-    color: rgb(255, 191, 101)!important;
+  color: rgb(255, 191, 101)!important;
+}
+
+.fa-qrcode:hover{
+  color: rgb(255, 191, 101) !important;
+}
+
+.fa-history:hover {
+  color: rgb(255, 191, 101) !important;
 }
 
 /*.tab.col.s3:hover .white-text:hover, .a.active:hover{

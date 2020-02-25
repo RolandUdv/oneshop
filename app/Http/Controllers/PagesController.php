@@ -18,7 +18,7 @@ class PagesController extends Controller
     {
         $this->middleware('auth', ['except' => ['index', 'about', 'contact', 'services', 'scan']]);
         // $this->middleware('auth', ['except' => ['index', 'about', 'contact', 'services', 'scan', 'favorites', 'profile']]);
-        $this->middleware('1', ['except' => ['index', 'about', 'contact', 'services', 'scan', 'favorites', 'profile']]);
+        $this->middleware('1', ['except' => ['index', 'about', 'contact', 'services', 'scan', 'history', 'profile']]);
 
     }
 
@@ -111,34 +111,32 @@ class PagesController extends Controller
 
     public function history(){
         // $this->middleware('auth');
-        $title = 'Favorites page / Purchase history';
-        $id = auth()->user('id');
-        // return view('pages.history', compact('title'));
+        $favtitle = 'Favourites';
+        $title = 'Booking History';
+
+        // $user_id = auth()->user('id');
+        $user_id = auth()->user()->id;
+        $bookings = Booking::where('user_id', $user_id)->get();
+        // $historycount = Booking::count('user_id', $user_id);
+ 
         return view('pages.history', ['title' => $title,
-        'id' => $id]);
+        'favtitle' => $favtitle,
+        // 'historycount' => $historycount,
+        'user_id' => $user_id,
+        'bookings' => $bookings]);
     }
+
 
     public function profile(){
         // $this->middleware('auth');
         $title = 'Profile page';
         // $id = auth()->user('id');
-        // $users = Users::find($id);
-
-        // return view('pages.profile', ['title' => $title,
-        // 'bookings' => $users->bookings]);
 
         // return view('pages.profile', ['title' => $title,
         // 'id' => $id]);
 
         return view('pages.profile')->with('title', $title);;
-
-        // return view('pages.profile')->with('bookings', $users->bookings);;
     }
-
-
-
-
-
 
     public function store(){
         $title = 'Store page';

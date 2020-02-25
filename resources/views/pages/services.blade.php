@@ -2,14 +2,14 @@
 
 @section('content')
 <div class="container">
-    <h1>{{$title}}</h1>
+    <h1>{{$title}}</h1></br>
 </div>
     {{-- @for ($i = 0; $i<100; $i++) --}}
     <div class="container">
         <div id="accordion">
             @foreach($services as $service)
             <div class="card">
-                <div class="card-header" id="headingOne">
+                <div class="card-header" id="headingOne"">
                     <h5 class="mb-0">
                         <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{$service->service_id}}" aria-expanded="true" aria-controls="collapse{{$service->service_id}}">
                                 {{$service->service_name}}
@@ -19,12 +19,12 @@
                                 {{-- <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#ModalView1">
                                     BOOK
                                 </button> --}}
-                                <button type="button" class="btn btn-primary float-right">
+                                <button type="button" class="btn btn-lg btn-primary float-right">
                                     BOOK
                                 </button>
                             </a>
                             <button class="btn btn-link float-right">£ {{$service->service_price}}</button>
-                            <button class="btn btn-link float-right"><small>@include('inc.service_length')</small></button>
+                            <button class="btn btn-link float-right"><small>(@include('inc.service_length'))</small></button>
                             {{-- <div class="float-right">{{$booking->service_price}}</div> --}}
                         </button>
                     </h5>
@@ -33,7 +33,7 @@
                 <div id="collapse{{$service->service_id}}" class="collapse" aria-labelledby="headingOne"
                     data-parent="#accordion">
                     <div class="card-body">
-                        {{$service->service_description}}example text of stuff.
+                        {{$service->service_description}}.
                     </div>
                 </div>
             </div>

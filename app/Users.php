@@ -15,8 +15,8 @@ class Users extends Model
     // timestamps
     public $timestamps = true; // no need for this
 
-    public function booking(){
-        return $this->hasMany('App\Booking');
+    public function bookings(){
+        return $this->hasMany(Booking::class);
     }
 
 }
