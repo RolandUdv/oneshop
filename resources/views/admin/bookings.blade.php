@@ -49,6 +49,7 @@
                         <th>Username</th>
                         <th>Firstname</th>
                         <th>Surname</th>
+                        <th>Email</th>
                         <th>Service ID</th>
                         <th>Service Name</th>
                         <th>Service Price</th>
@@ -75,6 +76,7 @@
                         <td class="bg-success">{{$booking->username}}</td>
                         <td class="bg-success">{{$booking->firstname}}</td>
                         <td class="bg-success">{{$booking->surname}}</td>
+                        <td class="bg-success">{{$booking->email}}</td>
                         <td class="bg-success">{{$booking->service_id}}</td>
                         <td class="bg-success">{{$booking->service_name}}</td>
                         <td class="bg-success">£ {{$booking->service_price}}</td>
@@ -122,6 +124,7 @@
                         <td class="bg-warning">{{$booking->username}}</td>
                         <td class="bg-warning">{{$booking->firstname}}</td>
                         <td class="bg-warning">{{$booking->surname}}</td>
+                        <td class="bg-warning">{{$booking->email}}</td>
                         <td class="bg-warning">{{$booking->service_id}}</td>
                         <td class="bg-warning">{{$booking->service_name}}</td>
                         <td class="bg-warning">£ {{$booking->service_price}}</td>

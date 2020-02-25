@@ -59,15 +59,26 @@ Route::resource('staff', 'StaffController');
 // Route::resource('service', 'ServiceController');
 // Route::resource('stores', 'StoresController');
 
+Route::get('/services{id}', function ($id, $username) {
+    return $id;
+    return view('services');
+});
+
+
+
+
+
 
 // dynamic routes
 // profile id pages
 Route::get('/profile{id}', function ($id, $username) {
-    //return $id;
-    //return view('profile');
+    return $id;
+    return view('profile');
 });
 
-Route::get('/category{id}', function ($id, $category_name) {
+Route::get('/favorites{id}', function ($id, $service_name) {
+    return $id;
+    return view('favorites');
 });
 
 // store id search

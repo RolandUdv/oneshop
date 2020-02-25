@@ -20,11 +20,31 @@
             {{-- {{Form::select('items', $items, null, );}} --}}
             {{-- {{Form::select('service_id', array('0' => 'No', '1' => 'Yes'))}} --}}
         </div>
+        {{-- <div class="form-group">
+            {{Form::label('service_name', 'Service Name')}}
+            {{Form::select('service_name', $servicename, null, ['class' => 'form-control'])}}
+        </div> --}}
         <div class="form-group">
+            {{Form::label('service_length', 'Service Length')}}
+            {{Form::select('service_length', array('0' => '15m', '1' => '30m', '2' => '45m', '3' => '60m', '4' => '1hr 15m', '5' => '1hr 30m', '6' => '1hr 45m', '7' => '2hrs'))}}
+        </div>
+        {{-- TIMESLOT --}}
+        {{-- <div class="form-group">
+            {{Form::label('service_length', 'Timeslot')}}
+            {{Form::select('service_length', array('0' => '15m', '1' => '30m', '2' => '45m', '3' => '60m', '4' => '1hr 15m', '5' => '1hr 30m', '6' => '1hr 45m', '7' => '2hrs'))}}
+        </div> --}}
+        {{-- <div class="form-group">
+            {{Form::label('service_length', 'Service Length')}}
+            {{Form::select('service_length', $servicelength, null, ['class' => 'form-control'])}}
+        </div> --}}
+        <div class="form-group">
+            {{Form::label('service_price', 'Service Price')}}
+            {{Form::select('service_price', $serviceprice, null, ['class' => 'form-control'])}}
+        </div>
+        {{-- <div class="form-group">
             {{Form::label('user_id', 'User Id')}}
             {{Form::number('user_id', $bookings->user_id, ['class' => 'form-control', 'placeholder' => 'User Id'])}}
-            {{-- {{Form::select('user_id', $userid, null, ['class' => 'form-control'])}} --}}
-        </div>
+        </div> --}}
         {{-- <div class="form-group">
             {{Form::label('service_name', 'Service Name')}}
             {{Form::text('service_name', $bookings->service_name, ['class' => 'form-control', 'placeholder' => 'Service Name'])}}
@@ -37,22 +57,22 @@
             {{Form::label('service_length', 'Service Length')}}
             {{Form::select('service_length', array('0' => '15m', '1' => '30m', '2' => '45m', '3' => '1hr', '4' => '1hr 15m', '5' => '1hr 30m', '6' => '1hr 45m', '7' => '2hrs'))}}
         </div> --}}
-        <div class="form-group">
+        {{-- <div class="form-group">
             {{Form::label('firstname', 'Firstname')}}
             {{Form::text('firstname', $bookings->firstname, ['class' => 'form-control', 'placeholder' => 'Firstname'])}}
-        </div>
-        <div class="form-group">
+        </div> --}}
+        {{-- <div class="form-group">
             {{Form::label('surname', 'Surname')}}
             {{Form::text('surname', $bookings->surname, ['class' => 'form-control', 'placeholder' => 'Surname'])}}
-        </div>
+        </div> --}}
         {{-- <div class="form-group">
             {{Form::label('username', 'Username')}}
             {{Form::text('username', $bookings->username, ['class' => 'form-control', 'placeholder' => 'Username'])}}
         </div> --}}
-        <div class="form-group">
+        {{-- <div class="form-group">
             {{Form::label('email', 'Email')}}
             {{Form::text('email', $bookings->email, ['class' => 'form-control', 'placeholder' => 'Email'])}}
-        </div>
+        </div> --}}
         {{-- <div class="form-group">
             {{Form::label('password', 'Password')}}
             {{Form::text('password', $bookings->password, ['class' => 'form-control', 'placeholder' => 'Password'])}}

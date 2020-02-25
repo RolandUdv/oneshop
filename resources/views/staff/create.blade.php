@@ -7,7 +7,7 @@
 
 <h3>{{$title}}</h3>
 
-<div class="form-group">
+{{-- <div class="form-group">
     <div class='col-sm-6'>
         <div class='input-group date' id='datetimepicker1'>
             <input type='text' class="form-control" />
@@ -16,7 +16,7 @@
             </span>
         </div>
     </div>
-</div>
+</div> --}}
 
     {!! Form::open(['action' => 'StaffController@store', 'method' => 'POST']) !!}
         {{-- <div class="form-group">
@@ -71,12 +71,10 @@
 @section('script')
 <script>
 
-        $(document).ready(function(){
-        // $(document).ready(function($){
-            // $(function() {
-              $('#datetimepicker1').datetimepicker();
-            });
-        //   });
+        // $(document).ready(function(){
+        //       $('#datetimepicker1').datetimepicker();
+        //     });
+
 
 </script>
 @endsection

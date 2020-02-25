@@ -14,4 +14,9 @@ class Users extends Model
     //public $review = 'category_name';
     // timestamps
     public $timestamps = true; // no need for this
+
+    public function booking(){
+        return $this->hasMany('App\Booking');
+    }
+
 }

@@ -8,14 +8,6 @@
 
 <h3>{{$title}}</h3>
 
-<div class="form-group">
-        <div class='input-group date' id='datetimepicker1'>
-            <input type='text' class="form-control" />
-            <span class="input-group-addon">
-                <span class="glyphicon glyphicon-calendar"></span>
-            </span>
-        </div>
-
     {!! Form::open(['action' => ['BookingController@update', $bookings->booking_id], 'method' => 'POST']) !!}
         <div class="form-group">
             {{Form::label('created_at', 'Created At')}}

@@ -8,6 +8,7 @@ use App\Category;
 use App\Store;
 use App\Staff;
 use App\Service;
+use App\Users;
 // use App\Service;
 use App\Booking;
 
@@ -117,8 +118,24 @@ class PagesController extends Controller
     public function profile(){
         // $this->middleware('auth');
         $title = 'Profile page';
-        return view('pages.profile')->with('title', $title);;
+        $id = auth()->user('id');
+        // $users = Users::find($id);
+
+        // return view('pages.profile', ['title' => $title,
+        // 'bookings' => $users->bookings]);
+
+        return view('pages.profile', ['title' => $title,
+        'id' => $id]);
+
+        // return view('pages.profile')->with('title', $title);;
+
+        // return view('pages.profile')->with('bookings', $users->bookings);;
     }
+
+
+
+
+
 
     public function store(){
         $title = 'Store page';

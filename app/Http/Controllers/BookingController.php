@@ -54,7 +54,10 @@ class BookingController extends Controller
         // return view('services.create')->with('title', $title);
         $title = 'Create Booking';
         $bookings = new Booking;
-        $serviceid = Service::pluck('service_name', 'service_id');
+        $serviceid = Service::pluck('service_name', 'service_id'); // populates select box on create.blade.php
+        $servicename = Service::pluck('service_name', 'service_name'); // populates select box on create.blade.php
+        // $servicelength = Service::pluck('service_length', 'service_length'); // populates select box on create.blade.php
+        $serviceprice = Service::pluck('service_price', 'service_price'); // populates select box on create.blade.php
         // $userid = Booking::pluck('username', 'user_id');
 
         // $items = Items::pluck('service_id', 'service_name');
@@ -65,7 +68,10 @@ class BookingController extends Controller
         // $services = Service::find($id);
         return view('bookings.create', ['title' => $title,
         'bookings' => $bookings,
-        'serviceid' => $serviceid
+        'serviceid' => $serviceid,
+        'servicename' => $servicename,
+        // 'servicelength' => $servicelength,
+        'serviceprice' => $serviceprice
         // 'userid' => $userid
         ]);
         // return view('services.create')->with('title', $title);
@@ -87,6 +93,16 @@ class BookingController extends Controller
         //     'service_length' => 'required'
         // ]);
         $bookings = new Booking;
+        $services = new Service;
+        $bookings->user_id = auth()->user()->id;
+        $bookings->username = auth()->user()->username;
+        $bookings->firstname = auth()->user()->firstname;
+        $bookings->surname = auth()->user()->surname;
+        $bookings->email = auth()->user()->email;
+        // $bookings->service_name = auth()->user()->service_name;
+        // $bookings->service_price = auth()->user()->service_price;
+        // $bookings->service_length = auth()->user()->service_length;
+        
         // $bookings = Booking::find($id);
         // $services = Service::find($id);
         // $bookings->created_at = $request->input('created_at');
@@ -94,10 +110,11 @@ class BookingController extends Controller
         // $bookings->service_id = $request->input('service_id');
         // $bookings->service_id = $request->input('service_id');
         // $bookings->updated_at = $request->input('updated_at');
-        // $bookings->service_id = $request->input('service_id');
-        // $bookings->service_price = $request->input('service_price');
-        // $bookings->service_length = $request->input('service_length');
+        $bookings->service_id = $request->input('service_id');
+        $bookings->service_price = $request->input('service_price');
+        $bookings->service_length = $request->input('service_length');
         $bookings->save();
+        // $services->save();
         return redirect('bookings/create')->with('success', 'Booked slot');
     }
 
