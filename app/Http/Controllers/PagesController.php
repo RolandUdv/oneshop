@@ -109,25 +109,28 @@ class PagesController extends Controller
         return view('pages.scan')->with('title', $title);;
     }
 
-    public function favorites(){
+    public function history(){
         // $this->middleware('auth');
         $title = 'Favorites page / Purchase history';
-        return view('pages.favorites', compact('title'));
+        $id = auth()->user('id');
+        // return view('pages.history', compact('title'));
+        return view('pages.history', ['title' => $title,
+        'id' => $id]);
     }
 
     public function profile(){
         // $this->middleware('auth');
         $title = 'Profile page';
-        $id = auth()->user('id');
+        // $id = auth()->user('id');
         // $users = Users::find($id);
 
         // return view('pages.profile', ['title' => $title,
         // 'bookings' => $users->bookings]);
 
-        return view('pages.profile', ['title' => $title,
-        'id' => $id]);
+        // return view('pages.profile', ['title' => $title,
+        // 'id' => $id]);
 
-        // return view('pages.profile')->with('title', $title);;
+        return view('pages.profile')->with('title', $title);;
 
         // return view('pages.profile')->with('bookings', $users->bookings);;
     }

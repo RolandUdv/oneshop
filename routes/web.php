@@ -25,7 +25,7 @@ Route::get('/generateqr', 'PagesController@generateqr');
 // bottom navigation bar
 Route::get('/services', 'PagesController@services');
 Route::get('/scan', 'PagesController@scan');
-Route::get('/favorites', 'PagesController@favorites');
+Route::get('/history', 'PagesController@history');
 Route::get('/profile', 'PagesController@profile');
 Route::get('/store', 'PagesController@store');
 
