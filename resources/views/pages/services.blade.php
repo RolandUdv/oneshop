@@ -6,6 +6,17 @@
 </div>
 {{-- @for ($i = 0; $i<100; $i++) --}}
 <style>
+    .social-btn {
+        color: #ffffff!important;
+        /* background-color: #5c5c5c; */
+        background-color: #FF5864;
+        border-radius: 20px;
+    }
+
+    .fa-facebook-square, .fa-instagram, .fa-twitter {
+        font-size: 1.5em;
+    }
+
     .service-price-txt,
     .service-name-txt {
         font-weight: 600;
@@ -168,8 +179,8 @@
         <hr class="featurette-divider"><br>
         <!-- Reviews -->
         <h1>Reviews</h1>
-        <p class="font-italic">We take user reviews very seriously. Users can only provide a review if they have
-            visited the store and used one or more of their services.</p>
+        <p class="font-italic">We take user reviews very seriously. Registered users can only provide a review if they have
+            visited the store and used one or more of the services.</p>
         </br>
         <div class="card">
             <h5 class="card-header">
@@ -284,6 +295,24 @@ src="https://www.google.com/maps/embed/v1/undefined?origin=...&q=...&destination
                             <i class="fas fa-phone-alt text-white"></i> 01604 123456</h4>
                     </button></a>
             </div> <!-- telno widget end -->
+
+            </br>
+
+            <div class="social-widget text-center">
+                <h3 class="text-center font-weight-bold">Socials</h3>
+                <a href="{{'https://www.facebook.com/techusiast'}}"><button type="button" class="btn btn-lg social-btn"
+                        style="margin-right:10px; margin-bottom:10px;">
+                        <h4 class="text-white"><i class="fab fa-facebook-square text-white"></i></h4>
+                </button></a>
+                <a href="{{'https://www.twitter.com/techusiast'}}"><button type="button" class="btn btn-lg social-btn"
+                        style="margin-right:10px; margin-bottom:10px;">
+                        <h4 class="text-white"><i class="fab fa-twitter text-white"></i></h4>
+                </button></a>
+                <a href="{{'https://www.instagram.com/techusiastonline'}}"><button type="button" class="btn btn-lg social-btn"
+                        style="margin-right:10px; margin-bottom:10px;">
+                        <h4 class="text-white"><i class="fab fa-instagram text-white"></i></h4>
+                </button></a>
+            </div> <!-- social widget end -->
 
         </div> <!-- end of col-sm-4 -->
     </div>
