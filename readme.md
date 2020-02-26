@@ -1,6 +1,6 @@
 ## License
 
-[![CC BY-NC-ND 4.0][cc-by-shield]][cc-by]
+[![CC BY-NC-ND 4.0][cc-by-shield]][cc-by-nc-nd]
 
 This work is licensed under a [Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)][cc-by-nc-nd].
 
