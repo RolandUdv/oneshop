@@ -24,6 +24,8 @@ Route::get('/generateqr', 'PagesController@generateqr');
 
 // bottom navigation bar
 Route::get('/services', 'PagesController@services');
+Route::post('/services', 'PagesController@storereview'); // /services/create
+// Route::get('/services', 'ReviewController@services');
 Route::get('/scan', 'PagesController@scan');
 Route::get('/history', 'PagesController@history');
 Route::get('/profile', 'PagesController@profile');
@@ -53,6 +55,7 @@ Route::resource('pages', 'PagesController');
 Route::resource('bookings', 'BookingController');
 Route::resource('categories', 'CategoryController');
 Route::resource('reviews', 'ReviewController');
+// Route::resource('services', 'ReviewController');
 Route::resource('users', 'UserController');
 Route::resource('service', 'ServiceController');
 Route::resource('staff', 'StaffController');

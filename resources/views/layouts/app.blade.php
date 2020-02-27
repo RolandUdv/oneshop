@@ -72,7 +72,7 @@
                             You are logged in!
                         </div> --}}
 
-
+                @include('inc.messages')
                 @yield('carousel')
                 @yield('content')
                 <!-- includes titles and brief info -->

@@ -7,11 +7,11 @@
 {{-- @for ($i = 0; $i<100; $i++) --}}
 <style>
     .page-item.active .page-link {
-    z-index: 1;
-    color: #fff;
-    background-color: #FF5864;
-    border-color: #FF5864;
-}
+        z-index: 1;
+        color: #fff;
+        background-color: #FF5864;
+        border-color: #FF5864;
+    }
 
     /* Align pagination in the center */
     .pagination {
@@ -223,7 +223,7 @@
             <h5 class="card-header">
                 <img src="https://scontent-lht6-1.cdninstagram.com/v/t51.2885-19/s150x150/64760134_318524955748028_8686566807789633536_n.jpg?_nc_ht=scontent-lht6-1.cdninstagram.com&_nc_ohc=PxxtO5Fz5MoAX9taPZs&oh=64e71e7002ae6f646a43948aaf30e5ac&oe=5E84F6E6"
                     class="rounded-circle float-left" style="max-width: 60px; height: auto;"></img>
-                {{$review->username}}<br>
+                {{$review->firstname}} {{str_limit($review->surname, 1, '...')}}<br>
                 <small>{{$review->rating}} <i class="fas fa-star"></i> - {{$review->created_at->todatestring()}}</small>
                 <a class="btn btn-secondary btn-sm float-right text-white" href="#/{{$review->review_id}}"
                     role="button"><i class="fas fa-flag"></i> Report</a>
@@ -237,32 +237,7 @@
         {{$reviews->links()}}
 
         <hr class="featurette-divider">
-        @if (\Auth::user() ) <!-- || (\Auth::user()->isStaff == '1') -->
-        <div class="card bg-light font-weight-bold"> <!-- border-dark -->
-            <h3 class="card-header text-white">Post a review</h3>
-            <div class="card-body">
-                <div class="card-text">
-                    <div class="form-group">
-                        <p class="text-white">Fields marked with a * are mandatory</p>
-                        {{Form::label('rating', 'Rate the service * ')}}
-                        {{Form::select('rating', array('5' => '5 ⭐️⭐️⭐️⭐️⭐️', '4' => '4 ⭐️⭐️⭐️⭐️', '3' => '3 ⭐️⭐️⭐️', '2' => '2 ⭐️⭐️', '1' => '1 ⭐️'))}}
-                    </div>
-                    <div class="form-group">
-                        {{Form::label('description', 'Explain why * ')}}
-                        {!! Form::textarea('description', null, ['class'=>'form-control', 'placeholder' => 'Say a few things about your experience']) !!}
-                    </div>
-                    <div class="form-group">
-                        {{Form::submit('Post Review', ['class' => 'btn btn-dark float-right text-white', 'style' => 'margin-top:10px;'])}}
-                        {!! Form::close() !!}
-                    </div>
-                </div>
-            </div>
-        </div>
-        @else
-        <div>
-            <p class="text-center font-italic">You must be signed in to post a review</p>
-        </div>
-        @endif
+        @include('reviews.create') <!-- Inserts "Post a Review" field -->
 
     </div> <!-- don't delete -->
     {{-- @endforeach --}}
@@ -285,7 +260,7 @@
 
             <hr class="featurette-divider">
             <div class="rating-widget">
-                <h1 class="text-center font-weight-bold">Rating {{$avgrating}}/5</h1>
+            <h1 class="text-center font-weight-bold">Rating {{ number_format($avgrating,1) /* formats output to 1 decimal */ }}/5</h1>
 
                 {{-- TODO: Replace this in the near future --}}
                 <h4 class="float-left">5 </h4>

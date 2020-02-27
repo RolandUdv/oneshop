@@ -17,9 +17,12 @@ class PagesController extends Controller
 {
     public function __construct()
     {
+        // Accessible pages for people who aren't signed in
         $this->middleware('auth', ['except' => ['index', 'about', 'contact', 'services', 'scan']]);
         // $this->middleware('auth', ['except' => ['index', 'about', 'contact', 'services', 'scan', 'favorites', 'profile']]);
-        $this->middleware('1', ['except' => ['index', 'about', 'contact', 'services', 'scan', 'history', 'profile']]);
+        
+        // Authorised for staff and admins
+        $this->middleware('1', ['except' => ['index', 'about', 'contact', 'services', 'storereview', 'scan', 'history', 'profile']]);
 
     }
 
@@ -109,10 +112,25 @@ class PagesController extends Controller
         // return view('pages.services')->with('title', $title);;
     }
 
+    public function storereview(Request $request){
+        $this->validate($request, [
+            'rating' => 'required',
+            'description' => 'required'
+        ]);
 
-
-
-
+        $reviews = new Review;
+        $reviews->user_id = auth()->user()->id;
+        $reviews->username = auth()->user()->username;
+        $reviews->firstname = auth()->user()->firstname;
+        $reviews->surname = auth()->user()->surname;
+        
+        $reviews->rating = $request->input('rating');
+        $reviews->description = $request->input('description');
+        
+        $reviews->save();
+        // $services->save();
+        return redirect('services')->with('success', 'Your review has been posted');
+    }
 
     public function about(){
         $title = 'About Us';

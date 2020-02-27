@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Review;
+use App\Users;
 
 class ReviewController extends Controller
 {
@@ -47,7 +48,24 @@ class ReviewController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $this->validate($request, [
+            'rating' => 'required',
+            'description' => 'required'
+        ]);
+
+        $reviews = new Review;
+        $reviews->user_id = auth()->user()->id;
+        $reviews->username = auth()->user()->username;
+        $reviews->firstname = auth()->user()->firstname;
+        $reviews->surname = auth()->user()->surname;
+        
+        $reviews->rating = $request->input('rating');
+        $reviews->description = $request->input('description');
+        
+        $reviews->save();
+        // $services->save();
+        return redirect('services')->with('success', 'Your review has been posted');
     }
 
     /**

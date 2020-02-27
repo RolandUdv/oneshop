@@ -28,4 +28,3 @@
     {!! Form::close() !!}
 @endsection
 
-service_length
