@@ -6,14 +6,20 @@
 </div>
 {{-- @for ($i = 0; $i<100; $i++) --}}
 <style>
+    .fa-star {
+        color: #FCB700;
+    }
+
     .social-btn {
-        color: #ffffff!important;
+        color: #ffffff !important;
         /* background-color: #5c5c5c; */
         background-color: #FF5864;
         border-radius: 20px;
     }
 
-    .fa-facebook-square, .fa-instagram, .fa-twitter {
+    .fa-facebook-square,
+    .fa-instagram,
+    .fa-twitter {
         font-size: 1.5em;
     }
 
@@ -179,143 +185,178 @@
         <hr class="featurette-divider"><br>
         <!-- Reviews -->
         <h1>Reviews</h1>
-        <p class="font-italic">We take user reviews very seriously. Registered users can only provide a review if they have
+        <p class="font-italic">We take user reviews very seriously. Registered users can only provide a review if they
+            have
             visited the store and used one or more of the services.</p>
         </br>
+        @foreach ($reviews as $review)
         <div class="card">
             <h5 class="card-header">
                 <img src="https://scontent-lht6-1.cdninstagram.com/v/t51.2885-19/s150x150/64760134_318524955748028_8686566807789633536_n.jpg?_nc_ht=scontent-lht6-1.cdninstagram.com&_nc_ohc=PxxtO5Fz5MoAX9taPZs&oh=64e71e7002ae6f646a43948aaf30e5ac&oe=5E84F6E6"
                     class="rounded-circle float-left" style="max-width: 60px; height: auto;"></img>
-                Username<br>
-                Rating - <small>Posted 5 March 2020</small>
+                {{$review->username}}<br>
+                <small>{{$review->rating}} <i class="fas fa-star"></i> - {{$review->created_at->todatestring()}}</small>
+                <a class="btn btn-secondary btn-sm float-right text-white" href="#/{{$review->review_id}}"
+                    role="button"><i class="fas fa-flag"></i> Report</a>
             </h5>
             <div class="card-body">
-                <p class="card-text">Review text written here.</p>
+                <p class="card-text">{{$review->description}}</p>
             </div>
         </div>
+        @endforeach
 
-        <div class="card">
-            <h5 class="card-header">
-                <img src="https://scontent-lht6-1.cdninstagram.com/v/t51.2885-19/s150x150/64760134_318524955748028_8686566807789633536_n.jpg?_nc_ht=scontent-lht6-1.cdninstagram.com&_nc_ohc=PxxtO5Fz5MoAX9taPZs&oh=64e71e7002ae6f646a43948aaf30e5ac&oe=5E84F6E6"
-                    class="rounded-circle float-left" style="max-width: 60px; height: auto;"></img>
-                Username<br>
-                Rating - <small>Posted 5 March 2020</small>
-            </h5>
-            <div class="card-body">
-                <p class="card-text">Review text written here.</p>
-            </div>
-        </div>
+        {{$reviews->links()}}
 
     </div> <!-- don't delete -->
     {{-- @endforeach --}}
     {{-- </div> <!-- end of col-sm-8 --> --}}
     <div class="col-sm-4">
+
         <div class="googlemaps-widget">
             <h3 class="text-center font-weight-bold">Find Us</h3>
             {{-- From: https://www.embedgooglemap.net/ --}}
-            {{-- <iframe width="100%" height="auto" frameborder="0" style="border:0"
-src="https://www.google.com/maps/embed/v1/undefined?origin=...&q=...&destination=...&center=...&zoom=...&key=..." allowfullscreen></iframe>
-        </div> --}}
-
             {{-- <div class="mapouter"> --}}
             <div class="gmap_canvas"><iframe width="100%" frameborder="0" height="250px" style="border-radius: 20px;"
                     src="https://maps.google.com/maps?q=city%20barbers&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                <p class="text-center">23 Address Street, Northampton, NN1 1AB</p>
             </div>
 
             {{-- </div> --}}
 
-            </br>
+            {{-- </br> --}}
+            <style>
+                progress {
+                    background-color: #525252;
+                    height: 25px;
+                    width: 90%;
+                    border-radius: 25px;
+                }
 
+                progress::-webkit-progress-bar {
+                    background-color: #525252;
+                    /* background: rgb(255, 95, 109); */
+                    /* background: linear-gradient(75deg, rgb(255, 86, 100) 0%, rgb(255, 191, 101) 100%); */
+                    height: 25px;
+                    width: 90%;
+                    border-radius: 20px;
+                }
+
+                progress::-webkit-progress-value {
+                    /* background-color: #525252; */
+                    background: rgb(255, 95, 109);
+                    background: linear-gradient(75deg, rgb(255, 86, 100) 0%, rgb(255, 191, 101) 100%);
+                    height: 25px;
+                    width: 90%;
+                    border-radius: 20px;
+                }
+            </style>
+
+            <hr class="featurette-divider">
             <div class="rating-widget">
-                <h1 class="text-center font-weight-bold">Rating 4.5/5</h1>
-                {{-- <h3 class="text-white">1</h3> --}}
+                <h1 class="text-center font-weight-bold">Rating {{$avgrating}}/5</h1>
+
                 <h4 class="float-left">5 </h4>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                </div></br>
+                <progress max="{{$ratingcount}}" value="{{$rating5}}" style="float-right;"></progress></br></br>
                 <h4 class="float-left">4 </h4>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                        aria-valuemax="100"></div>
-                </div></br>
+                <progress max="{{$ratingcount}}" value="{{$rating4}}" style="float-right;"></progress></br></br>
                 <h4 class="float-left">3 </h4>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                        aria-valuemax="100"></div>
-                </div></br>
+                <progress max="{{$ratingcount}}" value="{{$rating3}}" style="float-right;"></progress></br></br>
                 <h4 class="float-left">2 </h4>
-                <div class="progress">
-                    <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
-                        aria-valuemax="100"></div>
-                </div></br>
+                <progress max="{{$ratingcount}}" value="{{$rating2}}" style="float-right;"></progress></br></br>
                 <h4 class="float-left">1 </h4>
+                <progress max="{{$ratingcount}}" value="{{$rating1}}" style="float-right;"></progress></br></br>
+
+                {{-- <h3 class="text-white">1</h3> --}}
+                {{-- <h4 class="float-left">5 </h4>
+                <progress max="100" value="80"></progress>
                 <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
-                        aria-valuemax="100"></div>
-                </div>
-                <div class="text-center font-italic">
-                    <p>Rating based on 45 user reviews</p>
-                </div>
-            </div> <!-- rating widget end -->
+                    <div class="progress-bar" role="progressbar" style="width: {{$rating5 + 85}}%"
+                aria-valuenow="{{$rating5}}" aria-valuemin="0"
+                aria-valuemax="{{$ratingcount}}">
+            </div>
+        </div></br>
+        <h4 class="float-left">4 </h4>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: {{$rating4 * 10}}%" aria-valuenow="{{$rating4}}"
+                aria-valuemin="0" aria-valuemax="{{$ratingcount}}"></div>
+        </div></br>
+        <h4 class="float-left">3 </h4>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: {{$rating3 * 15}}%" aria-valuenow="{{$rating3}}"
+                aria-valuemin="0" aria-valuemax="{{$ratingcount}}"></div>
+        </div></br>
+        <h4 class="float-left">2 </h4>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: {{$rating2 + 10}}%" aria-valuenow="{{$rating2}}"
+                aria-valuemin="0" aria-valuemax="{{$ratingcount}}"></div>
+        </div></br>
+        <h4 class="float-left">1 </h4>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: {{$rating1 + 5}}%" aria-valuenow="{{$rating1}}"
+                aria-valuemin="0" aria-valuemax="{{$ratingcount}}"></div>
+        </div> --}}
+        <div class="text-center font-italic">
+            <p>Ratings based on {{$reviewcount}} user reviews</p>
+        </div>
+    </div> <!-- rating widget end -->
 
-            </br>
+    {{-- </br> --}}
+    <hr class="featurette-divider">
+    <div class="opentimes-widget text-center">
+        <h3 class="text-center font-weight-bold">Opening times</h3>
+        <table class="table borderless">
+            <tbody>
+                <tr>
+                    <th scope="row">Monday</th>
+                    <td>10:00 - 18:00</td>
+                </tr>
+                <tr>
+                    <th scope="row">Tuesday</th>
+                    <td>10:00 - 18:00</td>
+                </tr>
+                <tr>
+                    <th scope="row">Wednesday</th>
+                    <td>Closed</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-center font-italic">
+            <p>Bank holiday opening hours may vary.</p>
+        </div>
+    </div> <!-- opentimes widget end -->
 
-            <div class="opentimes-widget text-center">
-                <h3 class="text-center font-weight-bold">Opening times</h3>
-                <table class="table borderless">
-                    <tbody>
-                        <tr>
-                            <th scope="row">Monday</th>
-                            <td>10:00 - 18:00</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Tuesday</th>
-                            <td>10:00 - 18:00</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Wednesday</th>
-                            <td>Closed</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="text-center font-italic">
-                    <p>Bank holiday opening hours may vary.</p>
-                </div>
-            </div> <!-- opentimes widget end -->
+    {{-- </br> --}}
+    <hr class="featurette-divider">
+    <div class="telno-widget text-center">
+        <h3 class="text-center font-weight-bold">Get in touch</h3>
+        <a href="{{'tel:01604123456'}}"><button type="button" class="btn btn-lg btn-primary callbtn"
+                style="margin-right:10px; margin-bottom:10px;">
+                <h4 class="text-white">
+                    <i class="fas fa-phone-alt text-white"></i> 01604 123456</h4>
+            </button></a>
+    </div> <!-- telno widget end -->
 
-            </br>
+    {{-- </br> --}}
+    <hr class="featurette-divider">
+    <div class="social-widget text-center">
+        <h3 class="text-center font-weight-bold">Socials</h3>
+        <a href="{{'https://www.facebook.com/techusiast'}}"><button type="button" class="btn btn-lg social-btn"
+                style="margin-right:10px; margin-bottom:10px;">
+                <h4 class="text-white"><i class="fab fa-facebook-square text-white"></i></h4>
+            </button></a>
+        <a href="{{'https://www.twitter.com/techusiast'}}"><button type="button" class="btn btn-lg social-btn"
+                style="margin-right:10px; margin-bottom:10px;">
+                <h4 class="text-white"><i class="fab fa-twitter text-white"></i></h4>
+            </button></a>
+        <a href="{{'https://www.instagram.com/techusiastonline'}}"><button type="button" class="btn btn-lg social-btn"
+                style="margin-right:10px; margin-bottom:10px;">
+                <h4 class="text-white"><i class="fab fa-instagram text-white"></i></h4>
+            </button></a>
+    </div> <!-- social widget end -->
 
-            <div class="telno-widget text-center">
-                <h3 class="text-center font-weight-bold">Get in touch</h3>
-                <a href="{{'tel:01604123456'}}"><button type="button" class="btn btn-lg btn-primary callbtn"
-                        style="margin-right:10px; margin-bottom:10px;">
-                        <h4 class="text-white">
-                            <i class="fas fa-phone-alt text-white"></i> 01604 123456</h4>
-                    </button></a>
-            </div> <!-- telno widget end -->
-
-            </br>
-
-            <div class="social-widget text-center">
-                <h3 class="text-center font-weight-bold">Socials</h3>
-                <a href="{{'https://www.facebook.com/techusiast'}}"><button type="button" class="btn btn-lg social-btn"
-                        style="margin-right:10px; margin-bottom:10px;">
-                        <h4 class="text-white"><i class="fab fa-facebook-square text-white"></i></h4>
-                </button></a>
-                <a href="{{'https://www.twitter.com/techusiast'}}"><button type="button" class="btn btn-lg social-btn"
-                        style="margin-right:10px; margin-bottom:10px;">
-                        <h4 class="text-white"><i class="fab fa-twitter text-white"></i></h4>
-                </button></a>
-                <a href="{{'https://www.instagram.com/techusiastonline'}}"><button type="button" class="btn btn-lg social-btn"
-                        style="margin-right:10px; margin-bottom:10px;">
-                        <h4 class="text-white"><i class="fab fa-instagram text-white"></i></h4>
-                </button></a>
-            </div> <!-- social widget end -->
-
-        </div> <!-- end of col-sm-4 -->
-    </div>
+</div> <!-- end of col-sm-4 -->
+</div>
 </div>
 
 @endsection

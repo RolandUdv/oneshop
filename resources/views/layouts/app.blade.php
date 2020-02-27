@@ -41,11 +41,12 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+<style>
 
-    <style>
+</style>
+<script>
 
-
-    </style>
+</script>
 
 </head>
 <!-- layout forked from https://codepen.io/Lcallaghan84/pen/qPRRNO -->

@@ -11,6 +11,7 @@ use App\Service;
 use App\Users;
 // use App\Service;
 use App\Booking;
+use App\Review;
 
 class PagesController extends Controller
 {
@@ -75,11 +76,35 @@ class PagesController extends Controller
 
         $bookings = Booking::all();
         $services = Service::all();
-        //$services = Service::orderBy('service_id', 'asc')->take(5)->get(); // LIMIT 5
+        $reviews = Review::all();
+
+        // $services = Service::orderBy('service_name', 'asc');
+        $reviews = Review::orderBy('created_at', 'asc')->paginate(10);
+        $reviewcount = Review::count('review_id');
+        $ratingcount = Review::count('rating');
+        $ratingsum = Review::sum('rating'); // Adds up all of the rating fields
+
+        $rating5 = Review::where('rating', 5)->count(); // Counts how many 5 star reviews are there
+        $rating4 = Review::where('rating', 4)->count(); // Counts how many 4 star reviews are there
+        $rating3 = Review::where('rating', 3)->count(); // Counts how many 3 star reviews are there
+        $rating2 = Review::where('rating', 2)->count(); // Counts how many 2 star reviews are there
+        $rating1 = Review::where('rating', 1)->count(); // Counts how many 1 star reviews are there
+
+        $avgrating = ($ratingsum) / $ratingcount; // Counts the average rating
 
         return view('pages.services', ['title' => $title,
         'bookings' => $bookings,
-        'services' => $services]);
+        'reviews' => $reviews,
+        'services' => $services,
+        'reviewcount' => $reviewcount,
+        'avgrating' => $avgrating,
+        'ratingcount' => $ratingcount,
+        'rating5' => $rating5,
+        'rating4' => $rating4,
+        'rating3' => $rating3,
+        'rating2' => $rating2,
+        'rating1' => $rating1,
+        'ratingsum' => $ratingsum]);
 
         // return view('pages.services')->with('title', $title);;
     }
