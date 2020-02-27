@@ -88,17 +88,29 @@
         margin-top: 10px;
     }
 
-    .progress {
+    progress {
         background-color: #525252;
-        margin-bottom: -10px;
         height: 25px;
-        border-radius: 20px;
-        max-width: 100%;
+        width: 90%;
+        border-radius: 25px;
     }
 
-    .progress-bar {
+    progress::-webkit-progress-bar {
+        background-color: #525252;
+        /* background: rgb(255, 95, 109); */
+        /* background: linear-gradient(75deg, rgb(255, 86, 100) 0%, rgb(255, 191, 101) 100%); */
+        height: 25px;
+        width: 90%;
+        border-radius: 20px;
+    }
+
+    progress::-webkit-progress-value {
+        /* background-color: #525252; */
         background: rgb(255, 95, 109);
         background: linear-gradient(75deg, rgb(255, 86, 100) 0%, rgb(255, 191, 101) 100%);
+        height: 25px;
+        width: 90%;
+        border-radius: 20px;
     }
 </style>
 
@@ -214,7 +226,7 @@
 
         <div class="googlemaps-widget">
             <h3 class="text-center font-weight-bold">Find Us</h3>
-            {{-- From: https://www.embedgooglemap.net/ --}}
+            {{-- TODO: From: https://www.embedgooglemap.net/ --}}
             {{-- <div class="mapouter"> --}}
             <div class="gmap_canvas"><iframe width="100%" frameborder="0" height="250px" style="border-radius: 20px;"
                     src="https://maps.google.com/maps?q=city%20barbers&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -225,37 +237,12 @@
             {{-- </div> --}}
 
             {{-- </br> --}}
-            <style>
-                progress {
-                    background-color: #525252;
-                    height: 25px;
-                    width: 90%;
-                    border-radius: 25px;
-                }
-
-                progress::-webkit-progress-bar {
-                    background-color: #525252;
-                    /* background: rgb(255, 95, 109); */
-                    /* background: linear-gradient(75deg, rgb(255, 86, 100) 0%, rgb(255, 191, 101) 100%); */
-                    height: 25px;
-                    width: 90%;
-                    border-radius: 20px;
-                }
-
-                progress::-webkit-progress-value {
-                    /* background-color: #525252; */
-                    background: rgb(255, 95, 109);
-                    background: linear-gradient(75deg, rgb(255, 86, 100) 0%, rgb(255, 191, 101) 100%);
-                    height: 25px;
-                    width: 90%;
-                    border-radius: 20px;
-                }
-            </style>
 
             <hr class="featurette-divider">
             <div class="rating-widget">
                 <h1 class="text-center font-weight-bold">Rating {{$avgrating}}/5</h1>
 
+                {{-- TODO: Replace this in the near future --}}
                 <h4 class="float-left">5 </h4>
                 <progress max="{{$ratingcount}}" value="{{$rating5}}" style="float-right;"></progress></br></br>
                 <h4 class="float-left">4 </h4>
