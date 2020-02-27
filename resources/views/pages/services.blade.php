@@ -34,6 +34,11 @@
         border-radius: 20px;
     }
 
+    .social-btn:hover {
+        background-color: #d41a28!important;
+        border-color: #d41a28;
+    }
+
     .fa-facebook-square,
     .fa-instagram,
     .fa-twitter {
@@ -85,6 +90,12 @@
 
     .btn-primary {
         background-color: #FF5864 !important;
+        border-color: #ff5764;
+    }
+
+    .btn-primary:hover {
+        background-color: #d41a28!important;
+        border-color: #d41a28;
     }
 
     .callbtn {
@@ -218,6 +229,7 @@
             have
             visited the store and used one or more of the services.</p>
         </br>
+        
         @foreach ($reviews as $review)
         <div class="card">
             <h5 class="card-header">

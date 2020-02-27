@@ -81,8 +81,10 @@ class PagesController extends Controller
         $services = Service::all();
         $reviews = Review::all();
 
+        // $user_id = auth()->user()->id;
+        // $reviewuser = Review::where('user_id', $user_id)->count();
         // $services = Service::orderBy('service_name', 'asc');
-        $reviews = Review::orderBy('created_at', 'asc')->paginate(10);
+        $reviews = Review::orderBy('created_at', 'desc')->paginate(10);
         $reviewcount = Review::count('review_id');
         $ratingcount = Review::count('rating');
         $ratingsum = Review::sum('rating'); // Adds up all of the rating fields
@@ -96,6 +98,8 @@ class PagesController extends Controller
         $avgrating = ($ratingsum) / $ratingcount; // Counts the average rating
 
         return view('pages.services', ['title' => $title,
+        // 'user_id' => $user_id,
+        // 'reviewuser' => $reviewuser,
         'bookings' => $bookings,
         'reviews' => $reviews,
         'services' => $services,

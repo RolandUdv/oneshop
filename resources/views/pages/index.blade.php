@@ -72,20 +72,26 @@
 .btn-primary {
     background-color: #ff5764!important;
     font-size: 20px!important;
+    border-color: #ff5764;
+    box-shadow: 2px 2px 5px #000!important;
 }
 
 .btn-secondary {
     background-color: #ffbe65!important;
     /* color: #000000!important; */
     font-size: 20px!important;
+    border-color: #ffbe65;
+    box-shadow: 2px 2px 5px #000!important;
 }
 
 .btn-primary:hover {
     background-color: #d41a28!important;
+    border-color: #d41a28;
 }
 
 .btn-secondary:hover {
     background-color: #e48a0e!important;
+    border-color: #e48a0e;
 }
 </style>
 
