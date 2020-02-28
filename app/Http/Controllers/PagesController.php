@@ -12,6 +12,7 @@ use App\Users;
 // use App\Service;
 use App\Booking;
 use App\Review;
+use App\Opentimes;
 
 class PagesController extends Controller
 {
@@ -80,6 +81,9 @@ class PagesController extends Controller
         $bookings = Booking::all();
         $services = Service::all();
         $reviews = Review::all();
+        $stores = Store::all()->take(1); // Limit to 1
+        $opentimes = Opentimes::all();
+        // $stores = Store::all();
 
         // $user_id = auth()->user()->id;
         // $reviewuser = Review::where('user_id', $user_id)->count();
@@ -101,6 +105,8 @@ class PagesController extends Controller
         // 'user_id' => $user_id,
         // 'reviewuser' => $reviewuser,
         'bookings' => $bookings,
+        'opentimes' => $opentimes,
+        'stores' => $stores,
         'reviews' => $reviews,
         'services' => $services,
         'reviewcount' => $reviewcount,

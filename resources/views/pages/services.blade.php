@@ -263,7 +263,9 @@
             <div class="gmap_canvas"><iframe width="100%" frameborder="0" height="250px" style="border-radius: 20px;"
                     src="https://maps.google.com/maps?q=city%20barbers&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                <p class="text-center">23 Address Street, Northampton, NN1 1AB</p>
+            @foreach ($stores as $store)
+            <p class="text-center">{{$store->house_no}} {{$store->address}}, </br>{{$store->city}}, {{$store->county}},</br> {{$store->postcode}}</p>
+            @endforeach
             </div>
 
             {{-- </div> --}}
@@ -326,18 +328,12 @@
         <h3 class="text-center font-weight-bold">Opening times</h3>
         <table class="table borderless">
             <tbody>
+                @foreach ($opentimes as $opentime)
                 <tr>
-                    <th scope="row">Monday</th>
-                    <td>10:00 - 18:00</td>
+                <th scope="row">{{$opentime->days}}</th>
+                    <td>{{$opentime->open_time}} - {{$opentime->close_time}}</td>
                 </tr>
-                <tr>
-                    <th scope="row">Tuesday</th>
-                    <td>10:00 - 18:00</td>
-                </tr>
-                <tr>
-                    <th scope="row">Wednesday</th>
-                    <td>Closed</td>
-                </tr>
+                @endforeach
             </tbody>
         </table>
         <div class="text-center font-italic">
@@ -349,10 +345,13 @@
     <hr class="featurette-divider">
     <div class="telno-widget text-center">
         <h3 class="text-center font-weight-bold">Get in touch</h3>
-        <a href="{{'tel:01604123456'}}"><button type="button" class="btn btn-lg btn-primary callbtn"
+        @foreach ($stores as $store)
+        <a href="tel:{{$store->phone_no}}"><button type="button" class="btn btn-lg btn-primary callbtn"
                 style="margin-right:10px; margin-bottom:10px;">
                 <h4 class="text-white">
-                    <i class="fas fa-phone-alt text-white"></i> 01604 123456</h4>
+                    
+                    <i class="fas fa-phone-alt text-white"></i> {{$store->phone_no}}</h4>
+        @endforeach
             </button></a>
     </div> <!-- telno widget end -->
 

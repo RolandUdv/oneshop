@@ -4,12 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Store extends Model
+class Opentimes extends Model
 {
     // table name
-    protected $table = 'stores';
+    protected $table = 'Opentimes';
     // primary key
-    public $primaryKey = 'store_id';
+    public $primaryKey = 'opentimes_id';
+    //
+    //public $review = 'category_name';
     // timestamps
     public $timestamps = true; // no need for this
 }

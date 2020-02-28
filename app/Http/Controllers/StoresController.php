@@ -20,6 +20,8 @@ class StoresController extends Controller
      */
     public function index()
     {
+        // using DB to paginate all store posts
+        // $stores = DB::table('stores')->paginate(1);
         // $stores = Store::orderBy('title', 'desc')->get(); // ORDER BY DESC
 
         // $stores = Store::where('title', 'Ace of Facez')->get(); // WHERE
@@ -35,24 +37,16 @@ class StoresController extends Controller
         // without using DB, paginate all store posts
         //$stores = Store::all();
         //return view('stores.smallstore')->with('stores', $stores);
-
-        // using DB to paginate all store posts
-        $stores = DB::table('stores')->paginate(1);
-        return view('stores.smallstore', ['stores' => $stores]);
+        $title = 'Store information';
+        $stores = Store::all();
+        
+        return view('admin.store_information', ['title' => $title,
+        'stores' => $stores]);
 
 
         //return view('pages.index', ['stores' => $stores]);
         //return Store::make('stores')->with('stores', $stores);
     }
-
-    
-    public function index2()
-    {
-        return view('pages.index', [
-            'stores' => Store::withCount('stores')->get()
-        ]);
-    }
-    
 
     /**
      * Show the form for creating a new resource.
@@ -96,7 +90,10 @@ class StoresController extends Controller
      */
     public function edit($id)
     {
-        //
+        $title = 'Edit Staff Member';
+        $stores = Store::find($id);
+        return view('store.edit', ['title' => $title,
+        'stores' => $stores]);
     }
 
     /**
@@ -108,7 +105,30 @@ class StoresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'store_name' => 'required',
+            'owner_name' => 'required',
+            'phone_no' => 'required',
+            'house_no' => 'required',
+            'address' => 'required',
+            'city' => 'required',
+            'county' => 'required',
+            'country' => 'required',
+            'postcode' => 'required'
+        ]);
+        $stores = Store::find($id);
+        $stores->store_name = $request->input('store_name');
+        $stores->store_information = $request->input('store_information');
+        $stores->owner_name = $request->input('owner_name');
+        $stores->phone_no = $request->input('phone_no');
+        $stores->house_no = $request->input('house_no');
+        $stores->address = $request->input('address');
+        $stores->city = $request->input('city');
+        $stores->county = $request->input('county');
+        $stores->country = $request->input('country');
+        $stores->postcode = $request->input('postcode');
+        $stores->save();
+        return redirect('store_information')->with('success', 'Store Information Updated');
     }
 
     /**

@@ -46,7 +46,10 @@ Route::get('/users', 'UserController@users');
 Route::get('/staff', 'StaffController@staff');
 Route::get('/service', 'ServiceController@service');
 Route::get('/bookings', 'BookingController@bookings');
-
+Route::get('/store_information', 'StoresController@store_information');
+Route::get('/store', 'StoresController@store');
+Route::get('/opentime', 'OpentimesController@opentime');
+// Route::get('/opening_times', 'OpentimesController@opening_times');
 
 // Route::get('/staff', 'StaffController@staff');
 //Route::resource('posts', 'PostsController');  //this has been deleted
@@ -55,17 +58,18 @@ Route::resource('pages', 'PagesController');
 Route::resource('bookings', 'BookingController');
 Route::resource('categories', 'CategoryController');
 Route::resource('reviews', 'ReviewController');
-// Route::resource('services', 'ReviewController');
+Route::resource('store_information', 'StoresController');
 Route::resource('users', 'UserController');
 Route::resource('service', 'ServiceController');
 Route::resource('staff', 'StaffController');
+Route::resource('opentime', 'OpentimesController');
 // Route::resource('service', 'ServiceController');
 // Route::resource('stores', 'StoresController');
 
-Route::get('/services{id}', function ($id, $username) {
-    return $id;
-    return view('services');
-});
+// Route::get('/services{id}', function ($id, $username) {
+//     return $id;
+//     return view('services');
+// });
 
 
 
@@ -74,21 +78,21 @@ Route::get('/services{id}', function ($id, $username) {
 
 // dynamic routes
 // profile id pages
-Route::get('/profile{id}', function ($id, $username) {
-    return $id;
-    return view('profile');
-});
+// Route::get('/profile{id}', function ($id, $username) {
+//     return $id;
+//     return view('profile');
+// });
 
-Route::get('/favorites{id}', function ($id, $service_name) {
-    return $id;
-    return view('favorites');
-});
+// Route::get('/favorites{id}', function ($id, $service_name) {
+//     return $id;
+//     return view('favorites');
+// });
 
 // store id search
-Route::get('/store{id}', function ($id, $store_name) {
-    //return $id;
-    //return view('profile');
-});
+// Route::get('/store{id}', function ($id, $store_name) {
+//     return $id;
+//     return view('profile');
+// });
 
 /*
 

@@ -82,10 +82,16 @@
                         <a href="{{ url('#')}}">Homepage</a>
                     </li>
                     <li>
-                        <a href="{{ url('generateqr')}}">Generate QR</a>
+                        <a href="{{ url('#')}}">About page</a>
                     </li>
                     <li>
-                        <a href="{{ url('#')}}">Other pages</a>
+                        <a href="{{ url('/opentime')}}">Opening & Closing Times</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/store_information')}}">Store information</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/generateqr')}}">Generate QR</a>
                     </li>
                 </ul>
             </li>
