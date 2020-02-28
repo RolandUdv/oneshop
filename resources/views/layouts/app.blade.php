@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8">
     <title>{{config('app.name', 'Brand')}}</title>
-    <!--Import materialize.css-->
+    
+{{-- /Applications/XAMPP/xamppfiles/htdocs/oneshop/resources/assets/favicon.jpg --}}
 
     {{-- <link type="text/css" rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"
@@ -14,6 +15,7 @@
     {{-- <link rel="stylesheet" href="/css/app.css"> --}}
     {{-- <link href="../public/css/app.css" rel="stylesheet" /> Bootstrap stylesheet --}}
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">{{-- Bootstrap stylesheet --}}
+    <link rel="shortcut icon" href="{{ asset('../resources/img/favicon.jpg') }}">
     <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
