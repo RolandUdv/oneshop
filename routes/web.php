@@ -30,6 +30,7 @@ Route::get('/scan', 'PagesController@scan');
 Route::get('/history', 'PagesController@history');
 Route::get('/profile', 'PagesController@profile');
 Route::get('/store', 'PagesController@store');
+Route::get('/support', 'PagesController@support');
 
 // Route::get('/staff', 'Staff\Controllers\StaffController@staff');
 

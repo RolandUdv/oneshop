@@ -182,6 +182,13 @@ class PagesController extends Controller
         // return view('pages.admin');;
     }
 
+    public function support(){
+        $this->middleware('1');
+        $title = 'Support & FAQ';
+        return view('admin.support')->with('title', $title);;
+        // return view('pages.admin');;
+    }
+
     public function bookings(){
         return view('admin.bookings');;
     }

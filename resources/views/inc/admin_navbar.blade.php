@@ -95,6 +95,12 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+                <a class="nav-link" href="{{ url('support')}}">
+                    <i class="fas fa-question-circle"></i>
+                    <span class="nav-link-text">Support & FAQ</span>
+                </a>
+            </li>
             {{-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti"
                     data-parent="#exampleAccordion">
