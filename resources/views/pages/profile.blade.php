@@ -25,7 +25,7 @@
     </style>
 
     @foreach ($users as $user)
-    {{-- TODO; better optimise this for desktop users --}}
+    {{-- TODO: better optimise this for desktop users --}}
     {{-- <div class="row">
         <div class="col-sm-4"> --}}
             <div class="text-center" style="padding: 10px;">
