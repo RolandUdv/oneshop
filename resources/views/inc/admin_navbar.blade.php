@@ -66,7 +66,7 @@
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-                <a class="nav-link" href="{{ url('#')}}">
+                <a class="nav-link" href="{{ url('profile')}}">
                     <i class="fas fa-user-edit"></i>
                     <span class="nav-link-text">Profile</span>
                 </a>
