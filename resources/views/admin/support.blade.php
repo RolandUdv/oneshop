@@ -2,6 +2,8 @@
 @section('content')
 <h3>{{$title}}</h3>
 <br>
+<h5>Your reference number is: #495-483-582</h5>
+<br>
 <div class="accordion" id="accordionExample">
     <h3>Get in touch</h3>
   <div class="card">
@@ -13,7 +15,7 @@
       </h2>
     </div>
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class="card-body">
+      <div class="card-body"><h5 style="font-weight-bold">Note: You must provide your reference number when you call or email us!</h5>
         If your website is down or you're having difficulties opening/loading it in, you can call us on <a href="tel:01604010101">01604 010101</a> OR email us <a href="mailto:example@example.com">example@example.com</a>. We are open 24/7/365!<br>
     </div>
     </div>
