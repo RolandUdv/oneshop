@@ -3,6 +3,7 @@
 <h3>{{$title}}</h3>
 <br>
 <div class="accordion" id="accordionExample">
+    <h3>Get in touch</h3>
   <div class="card">
     <div class="card-header" id="headingOne">
       <h2 class="mb-0">
@@ -13,16 +14,17 @@
     </div>
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
-        No need to panic, we're here to help!
+        If your website is down or you're having difficulties opening/loading it in, you can call us on <a href="tel:01604010101">01604 010101</a> OR email us <a href="mailto:example@example.com">example@example.com</a>. We are open 24/7/365!<br>
     </div>
     </div>
   </div>
 
+  <h3>How-To's</h3>
   <div class="card">
     <div class="card-header" id="heading2">
       <h2 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="heading2">
-          Collapsible Group Item #2
+          How to create & edit a new category?
         </button>
       </h2>
     </div>
@@ -37,7 +39,7 @@
     <div class="card-header" id="heading3">
       <h2 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="heading3">
-          Collapsible Group Item #3
+          How to create & edit a new service?
         </button>
       </h2>
     </div>
@@ -52,7 +54,7 @@
     <div class="card-header" id="heading4">
       <h2 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="heading4">
-          Collapsible Group Item #4
+          How to edit & cancel a new booking?
         </button>
       </h2>
     </div>
@@ -67,7 +69,7 @@
     <div class="card-header" id="heading5">
       <h2 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="heading5">
-          Collapsible Group Item #5
+          How to add new, create & edit your users + including staff members?
         </button>
       </h2>
     </div>
@@ -82,7 +84,7 @@
     <div class="card-header" id="heading6">
       <h2 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="heading6">
-          Collapsible Group Item #6
+          How to moderate your reviews?
         </button>
       </h2>
     </div>
@@ -97,7 +99,7 @@
     <div class="card-header" id="heading7">
       <h2 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse7" aria-expanded="false" aria-controls="heading7">
-          Collapsible Group Item #7
+          How to edit your own profile page?
         </button>
       </h2>
     </div>
@@ -112,7 +114,7 @@
     <div class="card-header" id="heading8">
       <h2 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse8" aria-expanded="false" aria-controls="heading8">
-          Collapsible Group Item #8
+          How to edit your store's information + including opening and closing times?
         </button>
       </h2>
     </div>
@@ -127,7 +129,7 @@
     <div class="card-header" id="heading9">
       <h2 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse9" aria-expanded="false" aria-controls="heading9">
-          Collapsible Group Item #9
+          How to edit the Homepage & About page?
         </button>
       </h2>
     </div>
@@ -142,7 +144,7 @@
     <div class="card-header" id="heading10">
       <h2 class="mb-0">
         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse10" aria-expanded="false" aria-controls="heading10">
-          Collapsible Group Item #10
+          Lost your QR code? How to generate a new one?
         </button>
       </h2>
     </div>
