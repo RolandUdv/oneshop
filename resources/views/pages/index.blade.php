@@ -56,11 +56,10 @@
         </svg> --}}
     </div>
     <div class="col-md-5 order-md-1">
-        <h2 class="featurette-heading">Lorem ipsum dolor sit amet, consectetur <span class="text-muted">adipiscing elit,</span></h2>
-        <p class="lead">Dsed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-             veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-             dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-             occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        @foreach ($homepages as $homepage)
+        <h2 class="featurette-heading">{{$homepage->text_heading}}</h2>
+        <p class="lead">{{$homepage->text_description}}</p>
+        @endforeach
     </div>
 </div>
 

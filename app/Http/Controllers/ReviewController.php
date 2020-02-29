@@ -23,8 +23,14 @@ class ReviewController extends Controller
         $title = "Reviews";
         // $bookings = Booking::orderBy('booking_id', 'asc')->paginate(10);
         // $bookingscount = Booking::count('booking_id');
+        // $reviews = Review::all();
 
-        return view('admin.reviews')->with('title', $title);
+        $reviews = Review::orderBy('created_at', 'desc')->paginate(10);
+        $reviewcount = Review::count('review_id');
+
+        return view('admin.reviews', ['title' => $title,
+        'reviews' => $reviews,
+        'reviewcount' => $reviewcount]);
         
         // $reviews = Review::all();
         // return view('pages.index')->with('reviews', $reviews);
@@ -87,7 +93,10 @@ class ReviewController extends Controller
      */
     public function edit($id)
     {
-        //
+        $title = 'Edit Review';
+        $reviews = Review::find($id);
+        return view('reviews.edit', ['title' => $title,
+        'reviews' => $reviews]);
     }
 
     /**
@@ -99,7 +108,14 @@ class ReviewController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'description' => 'required'
+        ]);
+        $reviews = Review::find($id);
+        $reviews->description = $request->input('description');
+        // $opentimes->updated_at = $request->input('updated_at');
+        $reviews->save();
+        return redirect('reviews')->with('success', 'Review Updated');
     }
 
     /**
@@ -110,6 +126,8 @@ class ReviewController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $reviews = Review::find($id);
+        $reviews->delete();
+        return redirect('reviews')->with('success', 'Review Removed');
     }
 }

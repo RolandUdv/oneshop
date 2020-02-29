@@ -79,7 +79,7 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseSettingsComponents">
                     <li>
-                        <a href="{{ url('#')}}">Homepage</a>
+                        <a href="{{ url('homepage')}}">Homepage</a>
                     </li>
                     <li>
                         <a href="{{ url('#')}}">About page</a>

@@ -3,16 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Opentimes;
+use App\Homepage;
 
-class OpentimesController extends Controller
+class HomepageController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-        $this->middleware('1');
-    }
     /**
      * Display a listing of the resource.
      *
@@ -20,11 +14,12 @@ class OpentimesController extends Controller
      */
     public function index()
     {
-        $title = 'Opening & Closing Times';
-        $opentimes = Opentimes::all();
-        
-        return view('admin.opentime', ['title' => $title,
-        'opentimes' => $opentimes]);
+        $title = "Homepage";
+
+        $homepages = Homepage::all();
+
+        return view('admin.homepage', ['title' => $title,
+        'homepages' => $homepages]);
     }
 
     /**
@@ -67,10 +62,10 @@ class OpentimesController extends Controller
      */
     public function edit($id)
     {
-        $title = 'Edit Opening & Closing Times';
-        $opentimes = Opentimes::find($id);
-        return view('opentime.edit', ['title' => $title,
-        'opentimes' => $opentimes]);
+        $title = 'Edit Homepage';
+        $homepages = Homepage::find($id);
+        return view('homepage.edit', ['title' => $title,
+        'homepages' => $homepages]);
     }
 
     /**
@@ -83,15 +78,15 @@ class OpentimesController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'open_time' => 'required',
-            'close_time' => 'required'
+            'text_heading' => 'required',
+            'text_description' => 'required'
         ]);
-        $opentimes = Opentimes::find($id);
-        $opentimes->open_time = $request->input('open_time');
-        $opentimes->close_time = $request->input('close_time');
+        $homepages = Homepage::find($id);
+        $homepages->text_heading = $request->input('text_heading');
+        $homepages->text_description = $request->input('text_description');
         // $opentimes->updated_at = $request->input('updated_at');
-        $opentimes->save();
-        return redirect('opentime')->with('success', 'Store Information Updated');
+        $homepages->save();
+        return redirect('homepage')->with('success', 'Homepage Updated');
     }
 
     /**

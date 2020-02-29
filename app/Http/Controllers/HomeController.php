@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Service;
 use App\Staff;
+use App\Homepage;
+
 class HomeController extends Controller
 {
     /**
@@ -24,13 +26,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $title = "Welcome back";
         $services = Service::all();
+        $homepages = Homepage::all();
         $services = Service::orderBy('service_id', 'asc')->take(5)->get(); // LIMIT 5
-        return view('pages.index', ['title' => $title,
-        'services' => $services]);
-        // return view('pages.index', ['title' => $title]);
-        // return view('pages.index');
+
+        return view('pages.index', ['services' => $services,
+        'homepages' => $homepages]);
     }
 
     public function admin()

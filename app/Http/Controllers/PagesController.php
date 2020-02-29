@@ -13,6 +13,7 @@ use App\Users;
 use App\Booking;
 use App\Review;
 use App\Opentimes;
+use App\Homepage;
 
 class PagesController extends Controller
 {
@@ -28,41 +29,18 @@ class PagesController extends Controller
     }
 
     public function index(){
+
+        // TODO; Fix this
+        // Use HomeController index instead of this
+
         // $title = "Welcome";
         $services = Service::all();
+        $homepages = Homepage::all();
         $services = Service::orderBy('service_id', 'asc')->take(5)->get(); // LIMIT 5
 
-        // return view('pages.index', ['title' => $title,
-        // 'services' => $services]);
-
-        return view('pages.index', ['services' => $services]);
-
-        // $stores = DB::table('stores')->paginate(1);
-        // return view('stores.smallstore', ['stores' => $stores]);
-
-        // return view('pages.index', [
-        //     'stores' => Store::withCount('stores')->get()
-        // ]);
-
-        // $category = Category::all();
-        // return view('pages.index')->with('category', $category);
-
-        // $store = Store::find($id);
-        // return view('stores.show')->with('store', $store);
-
-        // $data = array(
-        //     'title' => 'Index Page',
-        //     'categories' => ['Barber shops','Health & Beauty','etc']
-        // );
-        // return view('pages.index')->with($data);
-
-
-        //$stores = Store::all();
-        //return view('stores.smallstore')->with('stores', $stores);
-
-        //$stores = DB::table('stores')->paginate(1);
-        //return view('pages.index', ['stores' => $stores]);
-
+        return view('pages.index', ['services' => $services,
+        'title' => $title,
+        'homepages' => $homepages]);
     }
 
     public function login(){

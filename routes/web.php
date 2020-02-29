@@ -49,7 +49,9 @@ Route::get('/bookings', 'BookingController@bookings');
 Route::get('/store_information', 'StoresController@store_information');
 Route::get('/store', 'StoresController@store');
 Route::get('/opentime', 'OpentimesController@opentime');
-// Route::get('/opening_times', 'OpentimesController@opening_times');
+Route::get('/reviews', 'ReviewController@reviews');
+Route::get('/homepage', 'HomepageController@homepage');
+// Route::get('index', 'HomepageController@index');
 
 // Route::get('/staff', 'StaffController@staff');
 //Route::resource('posts', 'PostsController');  //this has been deleted
@@ -63,6 +65,9 @@ Route::resource('users', 'UserController');
 Route::resource('service', 'ServiceController');
 Route::resource('staff', 'StaffController');
 Route::resource('opentime', 'OpentimesController');
+Route::resource('homepage', 'HomepageController');
+// Route::resource('index', 'HomepageController');
+
 // Route::resource('service', 'ServiceController');
 // Route::resource('stores', 'StoresController');
 
