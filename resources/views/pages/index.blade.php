@@ -99,9 +99,11 @@
             <a href="{{'services'}}"><button type="button" class="btn btn-lg btn-primary"
                 style="margin-right:10px; margin-bottom:10px;"><h2 class="text-white">BOOK APPOINTMENT</h2></button></a></br>
                 <h2 class="font-weight-bold">OR</h2>
-            <a href="{{'tel:01604123456'}}"><button type="button" class="btn btn-lg btn-secondary"
+            @foreach ($stores as $store)
+            <a href="tel:{{$store->phone_no}}"><button type="button" class="btn btn-lg btn-secondary"
                 style="margin-right:10px; margin-bottom:10px;"><h2 class="text-white">
-                    <i class="fas fa-phone-alt text-white"></i> CALL US 01604 123456</h2></button></a>
+                    <i class="fas fa-phone-alt text-white"></i> CALL US {{$store->phone_no}}</h2></button></a>
+            @endforeach
     </div>
 </div>
 

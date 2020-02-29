@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Service;
 use App\Staff;
 use App\Homepage;
+use App\Store;
 
 class HomeController extends Controller
 {
@@ -27,11 +28,13 @@ class HomeController extends Controller
     public function index()
     {
         $services = Service::all();
+        $stores = Store::all();
         $homepages = Homepage::all();
         $services = Service::orderBy('service_id', 'asc')->take(5)->get(); // LIMIT 5
 
         return view('pages.index', ['services' => $services,
-        'homepages' => $homepages]);
+        'homepages' => $homepages,
+        'stores' => $stores]);
     }
 
     public function admin()
