@@ -19,6 +19,8 @@
     </div>
   </div>
 
+  <br>
+
   <h3>How-To's</h3>
   <div class="card">
     <div class="card-header" id="heading2">
