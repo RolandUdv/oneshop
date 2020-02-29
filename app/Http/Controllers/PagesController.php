@@ -161,6 +161,15 @@ class PagesController extends Controller
     public function profile(){
         // $this->middleware('auth');
         $title = 'Profile page';
+
+        // $user_id = auth()->user('id');
+        $id = auth()->user()->id;
+        $users = Users::where('id', $id)->get();
+ 
+        return view('pages.profile', ['title' => $title,
+        'id' => $id,
+        'users' => $users]);
+
         // $id = auth()->user('id');
 
         // return view('pages.profile', ['title' => $title,
