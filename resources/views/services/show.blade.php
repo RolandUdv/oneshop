@@ -123,10 +123,12 @@
         <div class="col-sm-1">
         </div>
         <div class="col-sm-4">
-            {!! Form::open(['action' => ['PagesController@create', $service_id], 'method' => 'POST']) !!}
+            {{-- {!! Form::open(['action' => 'PagesController@storebooking', 'method' => 'POST']) !!} --}}
+            {{-- {!! Form::open(['action' => ['PagesController@storebooking', $service_id], 'method' => 'POST']) !!} --}}
 
             <div class="form-group"></br>
                 <h3>Service:</h3>
+                <input class="form-control d-none" type="text" placeholder="{{$service_id}}" readonly>
                 <input class="form-control" type="text" placeholder="{{$service_name}}" readonly>
             </div>
             <div class="form-group"></br>
@@ -140,9 +142,9 @@
             <!-- d-block d-sm-none displays fields on small displays only -->
             </div>
             <div class="text-center">
-                {{Form::hidden('_method','PUT')}}
+                {{-- {{Form::hidden('_method','PUT')}} --}}
                 {{Form::submit('Book Appointment', ['class' => 'submitbtn btn btn-primary btn-lg btn-block', 'style' => 'border-radius: 20px;'])}}
-                {{Form::submit('Pay In Advance', ['class' => 'btn btn-success btn-md btn-block disabled', 'style' => 'border-radius: 20px;'])}}
+                {{-- {{Form::submit('Pay In Advance', ['class' => 'btn btn-success btn-md btn-block disabled', 'style' => 'border-radius: 20px;'])}} --}}
                 {!! Form::close() !!}
             </div>
         </div> <!-- col-sm-4 end -->

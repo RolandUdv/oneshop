@@ -24,10 +24,14 @@ Route::get('/generateqr', 'PagesController@generateqr');
 
 // bottom navigation bar
 Route::get('/services', 'PagesController@services');
-Route::post('/services', 'PagesController@storereview'); // /services/create
+Route::post('/services', 'PagesController@storereview');
+
 
 // Route::post('/services{$id}', 'PagesController@createbooking'); // may not work !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 Route::get('/services/{service_id}/{service_name}/{service_price}', 'PagesController@show');
+// Route::get('/services/{service_id}/{service_name}/{service_price}', 'PagesController@storebooking'); 
+// Route::post('/services/{service_id}/{service_name}/{service_price}', 'PagesController@storebooking'); 
+// Route::get('/services/{service_id}/{service_name}/{service_price}', 'PagesController@show');
 // {
 //     return $service_id;
 //     return view('favorites');

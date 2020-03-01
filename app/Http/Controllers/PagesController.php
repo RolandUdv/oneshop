@@ -145,6 +145,24 @@ class PagesController extends Controller
 
     }
 
+    public function storebooking(Request $request, $service_id, $service_name, $service_price)
+    {
+        $services = new Service;
+        $bookings = new Booking;
+        $bookings->user_id = auth()->user()->id;
+        $bookings->username = auth()->user()->username;
+        $bookings->firstname = auth()->user()->firstname;
+        $bookings->surname = auth()->user()->surname;
+        $bookings->email = auth()->user()->email;
+
+        $services->service_id = $request->input('service_id');
+        $services->service_name = $request->input('service_name');
+        $services->service_price = $request->input('service_price');
+
+        $bookings->save();
+        return redirect('history')->with('success', 'Appointment Booked');
+    }
+
     public function storereview(Request $request){
         $this->validate($request, [
             'rating' => 'required',
