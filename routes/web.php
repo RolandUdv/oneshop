@@ -25,6 +25,18 @@ Route::get('/generateqr', 'PagesController@generateqr');
 // bottom navigation bar
 Route::get('/services', 'PagesController@services');
 Route::post('/services', 'PagesController@storereview'); // /services/create
+
+// Route::post('/services{$id}', 'PagesController@createbooking'); // may not work !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Route::get('/services/{service_id}/{service_name}/{service_price}', 'PagesController@show');
+// {
+//     return $service_id;
+//     return view('favorites');
+// }); 
+
+// may not work !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// Route::input('service_id');
+
+
 // Route::get('/services', 'ReviewController@services');
 Route::get('/scan', 'PagesController@scan');
 Route::get('/history', 'PagesController@history');
@@ -67,6 +79,8 @@ Route::resource('service', 'ServiceController');
 Route::resource('staff', 'StaffController');
 Route::resource('opentime', 'OpentimesController');
 Route::resource('homepage', 'HomepageController');
+
+// Route::resource('services', 'PagesController', ['except' => ['create']]);
 // Route::resource('index', 'HomepageController');
 
 // Route::resource('service', 'ServiceController');

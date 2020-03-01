@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\Category;
 use App\Store;
 use App\Staff;
@@ -30,7 +31,7 @@ class PagesController extends Controller
 
     public function index(){
 
-        // TODO; Fix this
+        // FIXME:
         // Use HomeController index instead of this
 
         // $title = "Welcome";
@@ -98,6 +99,50 @@ class PagesController extends Controller
         'ratingsum' => $ratingsum]);
 
         // return view('pages.services')->with('title', $title);;
+    }
+
+    public function show(Request $request, $service_id, $service_name, $service_price){
+
+        $title = "Select an available slot";
+        $services = new Service;
+        $services->service_id = $request->input('service_id');
+        $services->service_name = $request->input('service_name');
+        $services->service_price = $request->input('service_price');
+
+        // $service_id = Input::get('service_id');.
+        // $service_id = $request->all();
+        // $service_id = $request->service_id;
+        // $service_id = $request->input('service_id');
+        // $services = Service::getObjectById($service_id);
+
+        // $page = new \stdClass();
+        // $page->service_id = $services->service_id;
+
+        // $services = $page;
+        // $services = array();
+        // $services[] = $service;
+
+        // return view('services.show', ['title' => $title,
+        // 'service_id' => $service_id,
+        // 'services' => $services]);
+
+        return view('services.show', ['title' => $title,
+        'service_id' => $service_id,
+        'service_name' => $service_name,
+        'service_price' => $service_price]);
+        
+        // $this->validate($request, [
+        //     'service_name' => 'required',
+        //     'service_price' => 'required'
+        // ]);
+
+        // $bookings = new Booking;
+        // $bookings->user_id = auth()->user()->id;
+
+        // $bookings->save();
+        // return view('services.create');
+        // return redirect('history')->with('success', 'You have booked your appointment');
+
     }
 
     public function storereview(Request $request){

@@ -156,7 +156,7 @@
                             <h4 class="service-name-txt">{{$service->service_name}}</h4>
                             {{-- <h3><span class="badge badge-secondary float-right">New</span></h3> --}}
                             {{-- <a class="btn btn-primary float-right" data-toggle="modal" data-target="#ModalView1" href="#hello">BOOK</a> --}}
-                            <a href="services/{{$service->service_id}}/create">
+                            <a href="services/{{$service->service_id}}/{{$service->service_name}}/{{$service->service_price}}">
                                 {{-- <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#ModalView1">
                                     BOOK
                                 </button> --}}
