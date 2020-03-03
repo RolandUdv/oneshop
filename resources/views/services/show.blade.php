@@ -82,6 +82,7 @@
         .ui-datepicker-multi-2,
         .ui-datepicker-multi {
             width: 100% !important;
+            border-radius: 20px!important;
         }
 
         .submitbtn {
@@ -99,9 +100,14 @@
             margin-right: -5px;
         }
 
-        .col-sm-7,
         .col-sm-4 {
             background-color: #eaeaea;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        .col-sm-7 {
+            /* background-color: #ffffff; */
             padding: 20px;
             border-radius: 20px;
         }
@@ -109,15 +115,10 @@
 
     <div class="row">
         <div class="col-sm-7 text-center">
-            <br>
             {{-- <h4>@include('inc.todaydate')</h4> --}}
-            <br>
+            
             <div id="datepicker" class="text-center"></div>
             <br>
-            
-
-
-
             
         </div> <!-- col-sm-8 end -->
         <div class="col-sm-1">
