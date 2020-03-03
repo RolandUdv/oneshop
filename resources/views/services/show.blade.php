@@ -21,7 +21,7 @@
                 // selectOtherMonths: true,
                 // numberOfMonths: 2,
                 firstDay: 1,
-                altField: "#alternate",
+                altField: "#dateofbooking",
                 altFormat: "yy-mm-dd",
                 minDate: 0,
                 maxDate: "+2W",
@@ -123,21 +123,28 @@
         <div class="col-sm-1">
         </div>
         <div class="col-sm-4">
-            {{-- {!! Form::open(['action' => 'PagesController@storebooking', 'method' => 'POST']) !!} --}}
-            {{-- {!! Form::open(['action' => ['PagesController@storebooking', $service_id], 'method' => 'POST']) !!} --}}
+            {!! Form::open(['action' => 'PagesController@storebooking', 'method' => 'POST']) !!}
 
             <div class="form-group"></br>
-                <h3>Service:</h3>
-                <input class="form-control d-none" type="text" placeholder="{{$service_id}}" readonly>
-                <input class="form-control" type="text" placeholder="{{$service_name}}" readonly>
-            </div>
-            <div class="form-group"></br>
-                <h3>Service Cost:</h3>
-                <input class="form-control" type="text" placeholder="£ {{$service_price}}" readonly>
+                <h3 class="text-center">Selected Service</h3>
+                <hr class="featurette-divider">
+                {{-- <h4>{{$service_id}}</h4> --}}
+                <h4 class="float-left">{{$service_name}}</h4>
+                <h4 class="float-right">£ {{$service_price}}</h4>
+                <br>
+                {{-- <input class="form-control d-none" type="text" placeholder="{{$service_id}}" name="service_id" readonly> --}}
+                {{Form::hidden('service_id', $service_id, ['class' => 'form-control', 'placeholder' => 'Service ID'])}}
+                {{Form::hidden('service_name', $service_name, ['class' => 'form-control', 'placeholder' => 'Service Name'])}}
+                {{Form::hidden('service_price', $service_price, ['class' => 'form-control', 'placeholder' => 'Service Price'])}}
+                {{-- {{Form::text('service_id', $service_id)}}
+                {{Form::text('service_name', $service_name)}}
+                {{Form::text('service_price', $service_price)}} --}}
+                {{-- <input class="form-control" type="text" placeholder="{{$service_name}}" name="service_name" readonly> --}}
             </div>
             <div class="form-group"></br>
                 <h3>Selected Date:</h3>
-            <input id="alternate" type="text" class="form-control" readonly /> 
+            {{Form::text('dateofbooking', '', ['id' => 'dateofbooking', 'class' => 'form-control', 'placeholder' => 'Booking Date'])}}
+            {{-- <input id="alternate" type="text" class="form-control" name="dateofbooking" readonly />  --}}
             <!-- d-none hides field on all screens -->
             <!-- d-block d-sm-none displays fields on small displays only -->
             </div>

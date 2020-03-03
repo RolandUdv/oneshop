@@ -145,7 +145,7 @@ class PagesController extends Controller
 
     }
 
-    public function storebooking(Request $request, $service_id, $service_name, $service_price)
+    public function storebooking(Request $request)
     {
         $services = new Service;
         $bookings = new Booking;
@@ -155,9 +155,27 @@ class PagesController extends Controller
         $bookings->surname = auth()->user()->surname;
         $bookings->email = auth()->user()->email;
 
-        $services->service_id = $request->input('service_id');
-        $services->service_name = $request->input('service_name');
-        $services->service_price = $request->input('service_price');
+        
+        $bookings->service_id = $request->input('service_id');
+        $bookings->service_name = $request->input('service_name');
+        $bookings->service_price = $request->input('service_price');
+        $booking->dateofbooking = $request->input('dateofbooking');
+        // $bookings->service_name = $services->service_name;
+        // $bookings->service_price = $services->service_price;
+
+        // Works but only inserts default value
+        // $service_id = $request->input('service_id');
+        // $service_name = $request->input('service_name');
+        // $service_price = $request->input('service_price');
+
+        // $booking->service_id = Input::get('service_id');
+        // $bookings->service_id = $request->input('service_id');
+        // $bookings->service_name = $request->input('service_name');
+        // $bookings->service_price = $request->input('service_price');
+        // 'dateofbooking' = $request->get('dateofbooking');
+        // $services->service_id = $request->input('service_id');
+        // $services->service_name = $request->input('service_name');
+        // $services->service_price = $request->input('service_price');
 
         $bookings->save();
         return redirect('history')->with('success', 'Appointment Booked');
