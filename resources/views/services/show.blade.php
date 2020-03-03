@@ -101,13 +101,14 @@
         }
 
         .col-sm-4 {
-            background-color: #eaeaea;
+            background-color: #f1f1f1;
+            /* background-color: #eaeaea; */
             padding: 20px;
             border-radius: 20px;
         }
 
         .col-sm-7 {
-            /* background-color: #ffffff; */
+            background-color: #f1f1f1;
             padding: 20px;
             border-radius: 20px;
         }
@@ -118,7 +119,6 @@
             {{-- <h4>@include('inc.todaydate')</h4> --}}
             
             <div id="datepicker" class="text-center"></div>
-            <br>
             
         </div> <!-- col-sm-8 end -->
         <div class="col-sm-1">
