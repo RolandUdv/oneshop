@@ -133,24 +133,16 @@
                 <h4 class="float-left">{{$service_name}}</h4>
                 <h4 class="float-right">£ {{$service_price}}</h4>
                 <br>
-                {{-- <input class="form-control d-none" type="text" placeholder="{{$service_id}}" name="service_id" readonly> --}}
                 {{Form::hidden('service_id', $service_id, ['class' => 'form-control', 'placeholder' => 'Service ID'])}}
                 {{Form::hidden('service_name', $service_name, ['class' => 'form-control', 'placeholder' => 'Service Name'])}}
                 {{Form::hidden('service_price', $service_price, ['class' => 'form-control', 'placeholder' => 'Service Price'])}}
-                {{-- {{Form::text('service_id', $service_id)}}
-                {{Form::text('service_name', $service_name)}}
-                {{Form::text('service_price', $service_price)}} --}}
-                {{-- <input class="form-control" type="text" placeholder="{{$service_name}}" name="service_name" readonly> --}}
             </div>
             <div class="form-group"></br>
-                <h3>Selected Date:</h3>
-            {{Form::text('dateofbooking', '', ['id' => 'dateofbooking', 'class' => 'form-control', 'placeholder' => 'Booking Date'])}}
-            {{-- <input id="alternate" type="text" class="form-control" name="dateofbooking" readonly />  --}}
+            
+            {{Form::hidden('dateofbooking', '', ['id' => 'dateofbooking'])}}
             <!-- d-none hides field on all screens -->
             <!-- d-block d-sm-none displays fields on small displays only -->
             </div>
-            <div class="text-center">
-                {{-- {{Form::hidden('_method','PUT')}} --}}
                 {{Form::submit('Book Appointment', ['class' => 'submitbtn btn btn-primary btn-lg btn-block', 'style' => 'border-radius: 20px;'])}}
                 {{-- {{Form::submit('Pay In Advance', ['class' => 'btn btn-success btn-md btn-block disabled', 'style' => 'border-radius: 20px;'])}} --}}
                 {!! Form::close() !!}

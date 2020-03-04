@@ -147,6 +147,10 @@ class PagesController extends Controller
 
     public function storebooking(Request $request)
     {
+        // $this->validate($request, [
+        //     'dateofbooking' => 'required'
+        // ]);
+
         $services = new Service;
         $bookings = new Booking;
         $bookings->user_id = auth()->user()->id;
@@ -159,7 +163,11 @@ class PagesController extends Controller
         $bookings->service_id = $request->input('service_id');
         $bookings->service_name = $request->input('service_name');
         $bookings->service_price = $request->input('service_price');
-        $booking->dateofbooking = $request->input('dateofbooking');
+        // dd($request->all());
+        // $booking->dateofbooking = $request->input('dateofbooking');
+        $bookings->dateofbooking = $request->input('dateofbooking');
+
+        // dd($request->all());
         // $bookings->service_name = $services->service_name;
         // $bookings->service_price = $services->service_price;
 
@@ -178,6 +186,7 @@ class PagesController extends Controller
         // $services->service_price = $request->input('service_price');
 
         $bookings->save();
+        
         return redirect('history')->with('success', 'Appointment Booked');
     }
 
