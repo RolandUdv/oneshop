@@ -25,7 +25,7 @@ class PagesController extends Controller
         // $this->middleware('auth', ['except' => ['index', 'about', 'contact', 'services', 'scan', 'favorites', 'profile']]);
         
         // Authorised for users, staff and admins
-        $this->middleware('1', ['except' => ['index', 'about', 'contact', 'services', 'storereview', 'scan', 'history', 'profile']]);
+        $this->middleware('1', ['except' => ['index', 'about', 'contact', 'services', 'storereview', 'scan', 'history', 'profile', 'show', 'storebooking']]);
 
     }
 
