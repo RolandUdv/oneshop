@@ -136,6 +136,7 @@
                 {{Form::hidden('service_id', $service_id, ['class' => 'form-control', 'placeholder' => 'Service ID'])}}
                 {{Form::hidden('service_name', $service_name, ['class' => 'form-control', 'placeholder' => 'Service Name'])}}
                 {{Form::hidden('service_price', $service_price, ['class' => 'form-control', 'placeholder' => 'Service Price'])}}
+                {{-- {{Form::hidden('service_price', $service_length, ['class' => 'form-control', 'placeholder' => 'Service Price'])}} --}}
             </div>
             <div class="form-group"></br>
             

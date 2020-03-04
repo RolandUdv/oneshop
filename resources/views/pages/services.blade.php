@@ -331,7 +331,11 @@
                 @foreach ($opentimes as $opentime)
                 <tr>
                 <th scope="row">{{$opentime->days}}</th>
+                    @if($opentime->open_time == 'Closed' || $opentime->close_time == 'Closed')
+                    <td>Closed</td>
+                    @else
                     <td>{{$opentime->open_time}} - {{$opentime->close_time}}</td>
+                    @endif
                 </tr>
                 @endforeach
             </tbody>

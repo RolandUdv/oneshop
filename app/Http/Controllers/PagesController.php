@@ -101,13 +101,15 @@ class PagesController extends Controller
         // return view('pages.services')->with('title', $title);;
     }
 
-    public function show(Request $request, $service_id, $service_name, $service_price){
+    public function show(Request $request, $service_id, $service_name, $service_price) 
+    {
 
         $title = "Select an available slot";
         $services = new Service;
         $services->service_id = $request->input('service_id');
         $services->service_name = $request->input('service_name');
         $services->service_price = $request->input('service_price');
+        // $services->service_length = $request->input('service_length');
 
         // $service_id = Input::get('service_id');.
         // $service_id = $request->all();
@@ -163,8 +165,11 @@ class PagesController extends Controller
         $bookings->service_id = $request->input('service_id');
         $bookings->service_name = $request->input('service_name');
         $bookings->service_price = $request->input('service_price');
+        // FIXME:service_length causes error and doesn't pass value in database
+        // $bookings->service_length = $request->input('service_length');
+
         // dd($request->all());
-        // $booking->dateofbooking = $request->input('dateofbooking');
+
         $bookings->dateofbooking = $request->input('dateofbooking');
 
         // dd($request->all());

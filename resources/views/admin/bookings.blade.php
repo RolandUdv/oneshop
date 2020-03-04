@@ -11,36 +11,40 @@
                         <i class="fas fa-calendar-check"></i>
                     </div>
                     <div class="mr-5">{{$bookingscount}} New Bookings!</div>
-                </div>
-                <a class="btn disabled card-footer text-white clearfix small z-1" href="{{ url('/bookings')}}">
-                    <span class="float-left">View Bookings</span>
-                    <span class="float-right">
-                        <i class="fa fa-angle-right"></i>
-                    </span>
-                </a>
-            </div>
-        </div>
-    </div>
+</div>
+<a class="btn disabled card-footer text-white clearfix small z-1" href="{{ url('/bookings')}}">
+    <span class="float-left">View Bookings</span>
+    <span class="float-right">
+        <i class="fa fa-angle-right"></i>
+    </span>
+</a>
+</div>
+</div>
+</div>
 </div> --}}
 
 <div class="card mb-3">
     <div class="card-header">
         <i class="fa fa-table"></i> {{$title}} Table
-        @if (\Auth::user()->isAdmin == '1') 
-        <a class="btn btn-primary float-right" href="{{ url('bookings/create')}}" role="button">Add New</a> {{-- disabled --}}
-        @elseif (\Auth::user()->isStaff == '1') 
-        <a class="btn btn-primary float-right disabled" href="{{ url('bookings/create')}}" role="button">Add New</a> {{-- disabled --}}
+        @if (\Auth::user()->isAdmin == '1')
+        <a class="btn btn-primary float-right" href="{{ url('bookings/create')}}" role="button">Add New</a>
+        {{-- disabled --}}
+        @elseif (\Auth::user()->isStaff == '1')
+        <a class="btn btn-primary float-right disabled" href="{{ url('bookings/create')}}" role="button">Add New</a>
+        {{-- disabled --}}
         @endif
-    </br>
+        </br>
         <h5 class="float-left px-1"><span class="badge badge-pill badge-info text-white">B ID = Booking ID</span></h5>
-        <h5 class="float-left px-1"><span class="badge badge-pill badge-info text-white text-left">U ID = User ID</span></h5>
+        <h5 class="float-left px-1"><span class="badge badge-pill badge-info text-white text-left">U ID = User ID</span>
+        </h5>
         <h5 class="float-left px-1"><span class="badge badge-pill badge-success">Less than 7 days old</span></h5>
-        <h5 class="float-left px-1"><span class="badge badge-pill badge-warning text-black">More than 7 days old</span></h5>
+        <h5 class="float-left px-1"><span class="badge badge-pill badge-warning text-black">More than 7 days old</span>
+        </h5>
     </div>
 
     <div class="card-body">
         <div class="table-responsive">
-                
+
             <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                 <thead class="thead-light">
                     <tr>
@@ -58,9 +62,9 @@
                         <th>Created At</th>
                         <th>Updated At</th>
                         <th>Edit</th>
-                        @if (\Auth::user()->isAdmin == '1') 
+                        @if (\Auth::user()->isAdmin == '1')
                         <th>Delete</th>
-                        @elseif (\Auth::user()->isStaff == '1') 
+                        @elseif (\Auth::user()->isStaff == '1')
                         @endif
                     </tr>
                 </thead>
@@ -106,18 +110,18 @@
                             <a href="bookings/{{$booking->booking_id}}/edit">
                                 <i class="fas fa-edit"></i>Edit</a>
                         </td>
-                        
-                            {{-- <i class="fas fa-trash"></i> --}}
-                        @if  (\Auth::user()->isAdmin == '1') 
+
+                        {{-- <i class="fas fa-trash"></i> --}}
+                        @if (\Auth::user()->isAdmin == '1')
                         <td>
-                            {!!Form::open(['action' => ['BookingController@destroy', $booking->service_id], 'method' =>
+                            {!!Form::open(['action' => ['BookingController@destroy', $booking->booking_id], 'method' =>
                             'POST', 'class' => 'class-right']) !!}
-                                {{Form::hidden('_method', 'DELETE')}}
-                                {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+                            {{Form::hidden('_method', 'DELETE')}}
+                            {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
                             {!!Form::close()!!}
                             {{-- @include('inc.modal_cancel') --}}
                         </td>
-                        @elseif (\Auth::user()->isStaff == '1') 
+                        @elseif (\Auth::user()->isStaff == '1')
                         @endif
 
                         @else {{-- If it's more than 7 days old, display it in yellow --}}
@@ -155,21 +159,21 @@
                             <a {{--class="btn disabled"--}} href="bookings/{{$booking->booking_id}}/edit">
                                 <i class="fas fa-edit"></i>Edit</a>
                         </td>
-                        
-                            {{-- <i class="fas fa-trash"></i> --}}
-                        @if  (\Auth::user()->isAdmin == '1') 
+
+                        {{-- <i class="fas fa-trash"></i> --}}
+                        @if (\Auth::user()->isAdmin == '1')
                         <td>
-                            {!!Form::open(['action' => ['BookingController@destroy', $booking->service_id], 'method' =>
+                            {!!Form::open(['action' => ['BookingController@destroy', $booking->booking_id], 'method' =>
                             'POST', 'class' => 'class-right']) !!}
-                                {{Form::hidden('_method', 'DELETE')}}
-                                {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+                            {{Form::hidden('_method', 'DELETE')}}
+                            {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
                             {!!Form::close()!!}
                             {{-- @include('inc.modal_cancel') --}}
                         </td>
-                        @elseif (\Auth::user()->isStaff == '1') 
+                        @elseif (\Auth::user()->isStaff == '1')
                         @endif
                         @endif
-                        
+
 
                         @endforeach
 
