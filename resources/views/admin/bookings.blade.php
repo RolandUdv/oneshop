@@ -56,6 +56,7 @@
                         <th>Email</th>
                         <th>Service ID</th>
                         <th>Booked for</th>
+                        <th>Timeslot</th>
                         <th>Service Name</th>
                         <th>Service Price</th>
                         <th>Service Length</th>
@@ -84,6 +85,7 @@
                         <td class="bg-success">{{$booking->email}}</td>
                         <td class="bg-success">{{$booking->service_id}}</td>
                         <td class="bg-success">{{$booking->dateofbooking}}</td>
+                        <td class="bg-success">{{$booking->timeslot}}</td>
                         <td class="bg-success">{{$booking->service_name}}</td>
                         <td class="bg-success">£ {{$booking->service_price}}</td>
 
@@ -133,6 +135,7 @@
                         <td class="bg-warning">{{$booking->email}}</td>
                         <td class="bg-warning">{{$booking->service_id}}</td>
                         <td class="bg-warning">{{$booking->dateofbooking}}</td>
+                        <td class="bg-warning">{{$booking->timeslot}}</td>
                         <td class="bg-warning">{{$booking->service_name}}</td>
                         <td class="bg-warning">£ {{$booking->service_price}}</td>
 

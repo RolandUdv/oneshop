@@ -45,7 +45,7 @@
                             <th scope="row">{{$booking->booking_id}}</th>
                             <td>{{$booking->service_name}}</td>
                             <td>{{$booking->firstname}} {{$booking->surname}}</td>
-                            <td>{{$booking->dateofbooking}}</td>
+                            <td>{{$booking->dateofbooking}} {{$booking->timeslot}}</td>
                             <td>{{$booking->created_at}}</td>
                             <td>£ {{$booking->service_price}}</td>
                             <td>empty</td>

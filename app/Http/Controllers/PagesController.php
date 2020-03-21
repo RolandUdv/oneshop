@@ -168,9 +168,8 @@ class PagesController extends Controller
         // FIXME:service_length causes error and doesn't pass value in database
         // $bookings->service_length = $request->input('service_length');
 
-        // dd($request->all());
-
         $bookings->dateofbooking = $request->input('dateofbooking');
+        $bookings->timeslot = $request->input('timepicker');
 
         // dd($request->all());
         // $bookings->service_name = $services->service_name;
