@@ -35,9 +35,9 @@
         });
 
         // Timepicker
-        $(document).ready(function () {
-            $('.timepicker').timepicker({
-                altField: ".timeslot",
+        $(function () {
+            $('#timepicker').timepicker({
+                altField: "#timepicker",
                 timeFormat: 'HH:mm',
                 interval: 30,
                 minTime: '10',
@@ -146,7 +146,7 @@
             <div id="datepicker" class="text-center"></div>
             <br>
             <h3 class="text-uppercase">Select a time slot</h3>
-            <input class="timepicker text-center">
+            <input id="timepicker" type="text" class="timepicker text-center">
             
         </div> <!-- col-sm-8 end -->
         <div class="col-sm-1">
@@ -169,7 +169,7 @@
             <div class="form-group"></br>
             
             {{Form::hidden('dateofbooking', '', ['id' => 'dateofbooking'])}}
-            {{Form::hidden('timeslot', '', ['class' => 'timepicker'])}}
+            {{Form::hidden('timepicker', '', ['id' => 'timepicker'])}}
             <!-- d-none hides field on all screens -->
             <!-- d-block d-sm-none displays fields on small displays only -->
             </div>

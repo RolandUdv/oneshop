@@ -2,6 +2,57 @@
 @section('content')
 <h3>{{$title}}</h3>
 
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css' />
+
+<h2>Calendar View</h2>
+
+<div class="card mb-3">
+    <div class="card-header">
+        <div id='calendar'></div>
+    </div>
+    <div class="card-footer">Found {{$bookingscount}} bookings in the system.</div>
+    <div class="card-footer small text-muted">Last Updated at: @include('inc.todaydate')</div>
+</div>
+
+
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js'></script>
+
+<script>
+    $(document).ready(function() {
+        
+        $('#calendar').fullCalendar({
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay'
+        },
+            timezone: 'UTC',
+            
+            events : [
+                @foreach($bookings as $booking)
+                {
+                    // id: 'd',
+                    title : '{{ $booking->timeslot }} - {{ $booking->firstname }} {{ $booking->surname }} - {{ $booking->service_name }}',
+                    backgroundColor: 'green',
+                    borderColor: 'green',
+                    textColor: 'white',
+                    display: 'list-item',
+                    start : '{{ $booking->dateofbooking }}',
+                    end: '{{ $booking->dateofbooking }}',
+                    url : '{{ route('bookings.edit', $booking->booking_id) }}'
+                },
+                @endforeach
+            ]
+        })
+    });
+</script>
+
+
+<br>
+<br>
+
 {{-- <div class="container-fluid">
     <div class="row">
         <div class="col-xl-6 col-sm-6 mb-3">
@@ -22,6 +73,8 @@
 </div>
 </div>
 </div> --}}
+
+<h2>Table View</h2>
 
 <div class="card mb-3">
     <div class="card-header">

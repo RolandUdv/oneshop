@@ -171,7 +171,7 @@ class PagesController extends Controller
         $bookings->dateofbooking = $request->input('dateofbooking');
         $bookings->timeslot = $request->input('timepicker');
 
-        // dd($request->all());
+        dd($request->all());
         // $bookings->service_name = $services->service_name;
         // $bookings->service_price = $services->service_price;
 
