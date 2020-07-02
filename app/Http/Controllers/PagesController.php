@@ -153,6 +153,7 @@ class PagesController extends Controller
         //     'dateofbooking' => 'required'
         // ]);
 
+        // $opentimes = new Opentime;
         $services = new Service;
         $bookings = new Booking;
         $bookings->user_id = auth()->user()->id;
@@ -172,22 +173,7 @@ class PagesController extends Controller
         $bookings->timeslot = $request->input('timepicker');
 
         dd($request->all());
-        // $bookings->service_name = $services->service_name;
-        // $bookings->service_price = $services->service_price;
 
-        // Works but only inserts default value
-        // $service_id = $request->input('service_id');
-        // $service_name = $request->input('service_name');
-        // $service_price = $request->input('service_price');
-
-        // $booking->service_id = Input::get('service_id');
-        // $bookings->service_id = $request->input('service_id');
-        // $bookings->service_name = $request->input('service_name');
-        // $bookings->service_price = $request->input('service_price');
-        // 'dateofbooking' = $request->get('dateofbooking');
-        // $services->service_id = $request->input('service_id');
-        // $services->service_name = $request->input('service_name');
-        // $services->service_price = $request->input('service_price');
 
         $bookings->save();
         
@@ -200,6 +186,7 @@ class PagesController extends Controller
             'description' => 'required'
         ]);
 
+        // $opentimes = new Opentimes;
         $reviews = new Review;
         $reviews->user_id = auth()->user()->id;
         $reviews->username = auth()->user()->username;

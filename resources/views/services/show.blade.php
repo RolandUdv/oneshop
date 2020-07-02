@@ -30,14 +30,15 @@
                 altField: "#dateofbooking",
                 altFormat: "yy-mm-dd",
                 minDate: 0,
-                maxDate: "+2W",
+                maxDate: "+3W",
             });
         });
 
         // Timepicker
         $(function () {
-            $('#timepicker').timepicker({
-                altField: "#timepicker",
+            $('input.timepicker').timepicker({
+
+                altField: "#timeslot",
                 timeFormat: 'HH:mm',
                 interval: 30,
                 minTime: '10',
@@ -147,7 +148,7 @@
             <br>
             <h3 class="text-uppercase">Select a time slot</h3>
             <input id="timepicker" type="text" class="timepicker text-center">
-            
+
         </div> <!-- col-sm-8 end -->
         <div class="col-sm-1">
         </div>
@@ -169,7 +170,7 @@
             <div class="form-group"></br>
             
             {{Form::hidden('dateofbooking', '', ['id' => 'dateofbooking'])}}
-            {{Form::hidden('timepicker', '', ['id' => 'timepicker'])}}
+            {{Form::hidden('timeslot', '', ['id' => 'timepicker'])}}
             <!-- d-none hides field on all screens -->
             <!-- d-block d-sm-none displays fields on small displays only -->
             </div>
