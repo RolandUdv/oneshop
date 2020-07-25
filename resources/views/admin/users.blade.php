@@ -26,7 +26,7 @@
                         <th>Surname</th>
                         {{-- <th>DOB</th> --}}
                         <th>Email</th>
-                        <th>Password</th>
+                        {{-- <th>Password</th> --}}
                         {{-- <th>Phone</th> --}}
                         <th>Registrated at</th>
                         <th>Last Updated</th>
@@ -58,7 +58,7 @@
                         <td>{{$user->surname}}</td>
                         {{-- <td>{{$user->staff_dob}}</td> --}}
                         <td>{{$user->email}}</td>
-                        <td>{{ str_limit($user->password, 10, '...')}}</td>
+                        {{-- <td>{{ str_limit($user->password, 10, '...')}}</td> --}}
                         {{-- <td>{{$user->password}}</td> --}}
                         <td>{{$user->created_at}}</td>
                         <td>{{$user->updated_at}}</td>
