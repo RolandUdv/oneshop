@@ -170,7 +170,7 @@ class PagesController extends Controller
         // $bookings->service_length = $request->input('service_length');
 
         $bookings->dateofbooking = $request->input('dateofbooking');
-        $bookings->timeslot = $request->input('timepicker');
+        $bookings->timeslot = $request->input('timeslot');
 
         // dd($request->all());
 
@@ -179,6 +179,27 @@ class PagesController extends Controller
         
         return redirect('history')->with('success', 'Appointment Booked');
     }
+
+    public function getTimeslots(Request $request)
+     {
+        $this->validate($request, [
+            'date' => 'required|string'
+        ]);
+
+        $date = $request->input('date');
+        $date = new \DateTime($date);
+        $date = $date->format('Y-m-d');
+
+        $timeslots = Booking::where('dateofbooking', $date)->pluck('timeslot');
+        if (empty($timeslots[0])) {
+            return response()->json([], 200);
+        }
+        return response()->json($timeslots, 200);
+        //dd($timeslots);
+
+     }
+
+
 
     public function storereview(Request $request){
         $this->validate($request, [

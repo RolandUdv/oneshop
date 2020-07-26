@@ -67,7 +67,7 @@ Route::resource('staff', 'StaffController');
 Route::resource('opentime', 'OpentimesController');
 Route::resource('homepage', 'HomepageController');
 
-
+Route::get('/gettimeslots', 'PagesController@getTimeslots');
 // dynamic routes
 // profile id pages
 // Route::get('/profile{id}', function ($id, $username) {
