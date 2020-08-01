@@ -1,10 +1,55 @@
 @extends('layouts.app')
-@include('layouts.carousel')
+{{-- @include('layouts.carousel') --}}
 @section('content')
 
 <div class="container">
     {{-- <h1 class="text-center">{{$title}} to {{config('app.name', 'Brand')}}</h1><br> --}}
 </div>
+
+
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        @foreach($homepages as $homepage)
+        <div class="carousel-item active">
+          <img src="{{url('storage/carousel_images')}}/{{$homepage->cover_image}}" class="d-block w-100" alt="{{$homepage->cover_image}}">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="text-uppercase">{{$homepage->cover_heading}}</h5>
+              <p>{{$homepage->cover_description}}</p>
+            </div>
+          </div>
+        <div class="carousel-item">
+            <img src="{{url('storage/carousel_images2')}}/{{$homepage->cover_image2}}" class="d-block w-100" alt="{{$homepage->cover_heading2}}">
+            <div class="carousel-caption d-none d-md-block">
+                <h5 class="text-uppercase">{{$homepage->cover_heading2}}</h5>
+                <p>{{$homepage->cover_description2}}</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{{url('storage/carousel_images3')}}/{{$homepage->cover_image3}}" class="d-block w-100" alt="{{$homepage->cover_heading3}}">
+            <div class="carousel-caption d-none d-md-block">
+                <h5 class="text-uppercase">{{$homepage->cover_heading3}}</h5>
+                <p>{{$homepage->cover_description3}}</p>
+            </div>
+          </div>
+        </div>
+        @endforeach
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+{{-- </div> --}}
+
+
 
 
 <div class="container">
@@ -47,13 +92,9 @@
 
 <div class="row featurette">
     <div class="col-md-7 order-md-2">
-        <img src="https://www.thelocalbarbershop.com/wp-content/uploads/2019/10/image00002-600x600.jpeg" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" alt="image">
-        {{-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="600"
-            height="600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
-            role="img" aria-label="Placeholder: 500x500">
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">600x600</text>
-        </svg> --}}
+    @foreach ($homepages as $homepage)
+    <img src="{{url('storage/homepage_images')}}/{{$homepage->right_image}}" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" alt="image">
+    @endforeach
     </div>
     <div class="col-md-5 order-md-1">
         @foreach ($homepages as $homepage)
