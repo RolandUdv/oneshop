@@ -34,7 +34,8 @@
                 @foreach($bookings as $booking)
                 {
                     // id: 'd',
-                    title : '{{ $booking->timeslot }} - {{ $booking->firstname }} {{ $booking->surname }} - {{ $booking->service_name }}',
+                    // title : '{{ $booking->timeslot }} - {{ $booking->firstname }} {{ $booking->surname }} - {{ $booking->service_name }}',
+                    title : '{{ $booking->timeslot }} - {{ $booking->service_name }}',
                     backgroundColor: 'green',
                     borderColor: 'green',
                     textColor: 'white',
