@@ -148,12 +148,16 @@
     </div>
 </div>
 
+<br>
 
-<hr class="featurette-divider"><br>
+<hr class="featurette-divider">
+<br>
+
 {{-- <hr class="mt-2 mb-5"> --}}
 
 {{-- https://startbootstrap.com/snippets/thumbnail-gallery/ --}}
-<div class="container">
+
+{{-- <div class="container">
 
         <h1 class="text-center text-lg-center mt-4 mb-0">Portfolio</h1></br></br>
       
@@ -164,7 +168,7 @@
                   <img class="img-fluid img-thumbnail" src="https://img77.uenicdn.com/image/upload/v1542319549/service_images/39d0efbb-e6ad-4860-a801-46a8aad6b87f.jpg" alt="">
                 </a>
           </div>
-          {{-- https://img77.uenicdn.com/image/upload/v1542319549/service_images/39d0efbb-e6ad-4860-a801-46a8aad6b87f.jpg --}}
+          https://img77.uenicdn.com/image/upload/v1542319549/service_images/39d0efbb-e6ad-4860-a801-46a8aad6b87f.jpg
           <div class="col-lg-3 col-md-4 col-6">
             <a href="#" class="d-block mb-4 h-100">
                   <img class="img-fluid img-thumbnail" src="https://www.k9-freestylers.com/wp-content/uploads/2017/10/shutterstock_185540867_1477049627-400x300.jpg" alt="">
@@ -177,13 +181,20 @@
           </div>
           <div class="col-lg-3 col-md-4 col-6">
             <a href="#" class="d-block mb-4 h-100">
-                    {{-- <img class="img-fluid img-thumbnail" style="max-width:250px!important;" src="https://www.hji.co.uk/wp-content/efs/2018/08/world-barber-day-square.jpg" alt=""> --}}
+                    <img class="img-fluid img-thumbnail" style="max-width:250px!important;" src="https://www.hji.co.uk/wp-content/efs/2018/08/world-barber-day-square.jpg" alt="">
                   <img class="img-fluid img-thumbnail" src="https://tq1barbers.co.uk/wp-content/uploads/2019/07/2-3-400x300.jpg" alt="">
                 </a>
           </div>
         </div>
         </br>
-      </div>
+      </div> --}}
+
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <div class="elfsight-app-71748050-6a9e-4778-a7bb-d4d4b23e1174"></div>
+
+    <br>
+    <br>
+    <br>
 
 @endsection
 
