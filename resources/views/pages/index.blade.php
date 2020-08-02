@@ -189,15 +189,43 @@
         </br>
       </div> --}}
 
-    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-    <div class="elfsight-app-71748050-6a9e-4778-a7bb-d4d4b23e1174"></div>
+    {{-- <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <div class="elfsight-app-71748050-6a9e-4778-a7bb-d4d4b23e1174"></div> --}}
 
-    <br>
-    <br>
-    <br>
+    {{-- Source: https://www.sowecms.com/demos/jquery.instagramFeed/index.html --}}
+
+    <script type="text/javascript" src="{{ asset('js/jquery.instagramFeed.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.instagramFeed.min.js') }}"></script>
+
+    <div class="container">
+        <div class="col-md-12 text-center">
+            <h1>Portfolio</h1>
+            <h3>Check us out on Instagram</h3>
+            </br>
+            <div id="instagram-feed-demo" class="instagram_feed" style="margin-bottom: 30px!important;"></div>
+        </div>
+        <br>
+    </div>
+
+    {{-- <div id="instagram-feed-demo" class="instagram_feed" style="margin-bottom: 30px!important;"></div> --}}
+
+    <script>
+        $(window).on('load', function () {
+            $.instagramFeed({
+                'username': 'mujs.fadehouse',
+                'container': "#instagram-feed-demo",
+                'display_profile': false,
+                'display_biography': false,
+                'display_gallery': true,
+                'display_igtv': false,
+                'items': 12,
+                'items_per_row': 3,
+                'margin': 0.75,
+                'lazy_load': true,
+                'image_size': 480,
+                'styling': true
+            });
+        });
+    </script>
 
 @endsection
-
-{{-- <a href="{{ url('/stores') }}">Store test</a> --}}
-
-
