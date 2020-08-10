@@ -103,15 +103,10 @@ class HomepageController extends Controller
 
         // Carousel cover image
         if($request->hasFile('cover_image')){
-            // Get filename with extension
             $filenameWithExt = $request->file('cover_image')->getClientOriginalName();
-            // Get just filename
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
-            // Get just ext
             $extension = $request->file('cover_image')->getClientOriginalExtension();
-            // Filename to store
             $fileNameToStore = $filename.'_'.time().'.'.$extension;
-            // Upload image
             $path = $request->file('cover_image')->storeAs('public/carousel_images', $fileNameToStore);
         }
 
