@@ -233,8 +233,10 @@
         @foreach ($reviews as $review)
         <div class="card">
             <h5 class="card-header">
-                <img src="https://scontent-lht6-1.cdninstagram.com/v/t51.2885-19/s150x150/64760134_318524955748028_8686566807789633536_n.jpg?_nc_ht=scontent-lht6-1.cdninstagram.com&_nc_ohc=PxxtO5Fz5MoAX9taPZs&oh=64e71e7002ae6f646a43948aaf30e5ac&oe=5E84F6E6"
+                <img src="https://image.flaticon.com/icons/svg/189/189627.svg"
                     class="rounded-circle float-left" style="max-width: 60px; height: auto;"></img>
+                {{-- <img src="https://as2.ftcdn.net/jpg/01/06/92/47/500_F_106924759_7qPPu6bZNN2O4al1ExdEWBdHUcpKMwuJ.jpg"
+                    class="rounded-circle float-left" style="max-width: 60px; height: auto;"></img> --}}
                 {{$review->firstname}} {{str_limit($review->surname, 1, '...')}}<br>
                 <small>{{$review->rating}} <i class="fas fa-star"></i> - {{$review->created_at->todatestring()}}</small>
                 <a class="btn btn-secondary btn-sm float-right text-white" href="#/{{$review->review_id}}"

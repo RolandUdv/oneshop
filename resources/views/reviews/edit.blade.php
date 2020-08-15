@@ -5,7 +5,7 @@
     <i class="fas fa-angle-double-left"></i> Back to Reviews
 </a>
 
-
+<div style="padding: 0 5em 0 5em;">
 <h3>{{$title}}</h3>
 
     {!! Form::open(['action' => ['ReviewController@update', $reviews->review_id], 'method' => 'POST']) !!}
@@ -33,4 +33,5 @@
         {{Form::hidden('_method','PUT')}}
         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
     {!! Form::close() !!}
+</div>
 @endsection

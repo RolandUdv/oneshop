@@ -6,6 +6,7 @@
 </a>
 <br>
 <br>
+<div style="padding: 0 5em 0 5em;">
 <div>
     <h5>If you are 'Closed' on a certain day, enter "Closed" into one of the fields, while including a "-" DASH, in the
         other.</h5>
@@ -35,6 +36,6 @@
 {{Form::hidden('_method','PUT')}}
 {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
 {!! Form::close() !!}
-
+</div>
 
 @endsection

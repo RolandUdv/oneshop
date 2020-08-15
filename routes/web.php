@@ -68,6 +68,9 @@ Route::resource('opentime', 'OpentimesController');
 Route::resource('homepage', 'HomepageController');
 
 Route::get('/gettimeslots', 'PagesController@getTimeslots');
+
+Route::post('search', ['as' => 'search', 'uses' => 'SearchController@index']);
+
 // dynamic routes
 // profile id pages
 // Route::get('/profile{id}', function ($id, $username) {

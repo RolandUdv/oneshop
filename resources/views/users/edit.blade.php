@@ -4,7 +4,7 @@
 <a class="btn btn-primary" href="{{ url('users')}}">
     <i class="fas fa-angle-double-left"></i> Back to Users
 </a>
-
+<div style="padding: 0 5em 0 5em;">
 <h3>{{$title}}</h3>
 
     {!! Form::open(['action' => ['UserController@update', $users->id], 'method' => 'POST']) !!}
@@ -47,4 +47,5 @@
         {{Form::hidden('_method','PUT')}}
         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
     {!! Form::close() !!}
+</div>
 @endsection

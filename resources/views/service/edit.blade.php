@@ -5,6 +5,7 @@
     <i class="fas fa-angle-double-left"></i> Back to Services
 </a>
 
+<div style="padding: 0 5em 0 5em;">
 <h3>{{$title}}</h3>
 
     {{-- {!! Form::open(['action' => 'ServiceController@update', 'method' => 'POST']) !!} --}}
@@ -28,5 +29,6 @@
         {{Form::hidden('_method','PUT')}}
         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
     {!! Form::close() !!}
+</div>
 @endsection
 

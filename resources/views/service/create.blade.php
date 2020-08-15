@@ -4,7 +4,7 @@
 <a class="btn btn-primary" href="{{ url('service')}}">
     <i class="fas fa-angle-double-left"></i> Back to Services
 </a>
-
+<div style="padding: 0 5em 0 5em;">
 <h3>{{$title}}</h3>
 
     {!! Form::open(['action' => 'ServiceController@store', 'method' => 'POST']) !!}
@@ -26,5 +26,6 @@
         </div>
         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
     {!! Form::close() !!}
+</div>
 @endsection
 

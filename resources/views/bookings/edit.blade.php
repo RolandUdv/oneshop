@@ -7,7 +7,7 @@
 
 
 <h3>{{$title}}</h3>
-
+<div style="padding: 0 5em 0 5em;">
     {!! Form::open(['action' => ['BookingController@update', $bookings->booking_id], 'method' => 'POST']) !!}
         <div class="form-group">
             {{Form::label('created_at', 'Created At')}}
@@ -34,6 +34,7 @@
         {{Form::hidden('_method','PUT')}}
         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
     {!! Form::close() !!}
+</div>
 @endsection
 
 @section('script')

@@ -29,7 +29,7 @@
     {{-- <div class="row">
         <div class="col-sm-4"> --}}
             <div class="text-center" style="padding: 10px;">
-                <img src="https://scontent-lht6-1.cdninstagram.com/v/t51.2885-19/s150x150/64760134_318524955748028_8686566807789633536_n.jpg?_nc_ht=scontent-lht6-1.cdninstagram.com&_nc_ohc=PxxtO5Fz5MoAX9taPZs&oh=64e71e7002ae6f646a43948aaf30e5ac&oe=5E84F6E6"
+                <img src="https://image.flaticon.com/icons/svg/189/189627.svg"
                     class="rounded-circle mx-auto d-block " style="max-width: 250px; height: auto;"></img><br>
                     <p>Change Profile Picture<p>
                 <h5>Username: {{$user->username}}</h5>

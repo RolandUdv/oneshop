@@ -4,7 +4,7 @@
 <a class="btn btn-primary" href="{{ url('staff')}}">
     <i class="fas fa-angle-double-left"></i> Back to Staff
 </a>
-
+<div style="padding: 0 5em 0 5em;">
 <h3>{{$title}}</h3>
 
 {{-- <div class="form-group">
@@ -66,6 +66,7 @@
         </div>
         {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
     {!! Form::close() !!}
+</div>
 @endsection
 
 @section('script')
