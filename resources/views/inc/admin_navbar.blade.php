@@ -229,7 +229,9 @@
                 <a class="dropdown-item small" href="#">View all alerts</a>
               </div>
             </li> --}}
-            <li class="nav-item">
+
+            {{-- Search bar --}}
+            {{-- <li class="nav-item">
                 <form class="form-inline my-2 my-lg-0 mr-lg-2">
                     <div class="input-group">
                         <input class="form-control" type="text" placeholder="Search for...">
@@ -240,7 +242,7 @@
                         </span>
                     </div>
                 </form>
-            </li>
+            </li> --}}
             <li class="nav-item">
                     {{-- <a class="nav-link" data-toggle="modal" data-target="#exampleModal" href="{{ route('logout') }}" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
