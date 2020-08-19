@@ -253,7 +253,8 @@ class PagesController extends Controller
 
         // $user_id = auth()->user('id');
         $user_id = auth()->user()->id;
-        $bookings = Booking::where('user_id', $user_id)->get();
+        $bookings = Booking::where('user_id', $user_id)->orderBy('created_at', 'DESC')->paginate(10);
+        // $bookings = Booking::orderBy('created_at', 'DESC')->paginate(10);
         // $bookings = Booking::orderBy('created_at', 'desc')->paginate(10);
 
         // $historycount = Booking::count('user_id', $user_id);
