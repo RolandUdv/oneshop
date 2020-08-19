@@ -20,12 +20,12 @@
                     <span class="nav-link-text">Dashboard</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+            {{-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
                 <a class="nav-link" href="{{ url('/categories')}}">
                     <i class="fas fa-list-ol"></i>
                     <span class="nav-link-text">Categories</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
                 <a class="nav-link" href="{{ url('/service')}}">
                     <i class="fas fa-tasks"></i>
