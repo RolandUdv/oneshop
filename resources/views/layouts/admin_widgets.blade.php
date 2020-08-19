@@ -58,7 +58,7 @@
                                         <i class="fas fa-calendar-check"></i>
                                         {{-- <i class="far fa-calendar-alt"></i> --}}
                                     </div>
-                                    <div class="mr-5">bookingscount123 New Bookings!</div>
+                                    <div class="mr-5">3 New Bookings!</div>
                                 </div>
                                 <a class="card-footer text-white clearfix small z-1" href="{{ url('/bookings')}}">
                                     <span class="float-left">View Bookings</span>
