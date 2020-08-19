@@ -113,13 +113,63 @@
 <hr>
 <br> --}}
 
-<h4>Finished</h4>
+
+<h4>Upcoming</h4>
+@foreach ($bookings as $booking)
+
+@if( $booking->dateofbooking > $currentTime)
 <div class="row">
+  <div class="container align-content-start flex-wrap">
+    <div style="margin: 0 30px 0 30px" class="card">
+      <div class="card-body ">
+          <p style="color: #f19d00"><i style="font-size: 20px" class="fas fa-clock"></i> Upcoming #{{$booking->booking_id}}</p>
+        <h4 class="card-title"> {{$booking->service_name}}</h4>
+        <h5 class="float-right">{{ \Carbon\Carbon::parse($booking->dateofbooking)->format('D d M Y')}} {{$booking->timeslot}}</h5>
+        <h5 class="card-text">£ {{$booking->service_price}}</h5>
+        <a href="#" style="width: 170px; padding: 7px" class="btn btn-primary text-white text-uppercase">Book Again</a>
+        <a href="#" style="width: 110px; padding: 7px" class="btn btn-dark float-right text-white text-uppercase">Cancel</a>
+      </div>
+    </div>
+  </div>
+</div>
+@endif
+@endforeach
+
+
+
+
+<h4>Finished</h4>
+@foreach ($bookings as $booking)
+@if( $booking->dateofbooking < $currentTime)
+<div class="row">
+  <div class="container align-content-start flex-wrap">
+    <div style="margin: 0 30px 0 30px" class="card">
+      <div class="card-body ">
+          <p style="color: #359c56"><i style="font-size: 20px" class="fas fa-check-circle"></i> Finished #{{$booking->booking_id}}</p>
+        <h4 class="card-title"> {{$booking->service_name}}</h4>
+        <h5 class="float-right">{{ \Carbon\Carbon::parse($booking->dateofbooking)->format('D d M Y')}} {{$booking->timeslot}}</h5>
+        <h5 class="card-text">£ {{$booking->service_price}}</h5>
+        <a href="#" style="width: 170px; padding: 7px" class="btn btn-primary text-white text-uppercase">Book Again</a>
+      </div>
+    </div>
+  </div>
+</div>
+@endif
+@endforeach
+
+<br>
+{{-- <br> --}}
+
+{{-- <div class="row">
   <div class="container align-content-start flex-wrap">
     @foreach ($bookings as $booking)
     <div style="margin: 0 30px 0 30px" class="card">
       <div class="card-body ">
-        <p style="color: #359c56"><i class="fas fa-check-circle"></i> Finished #{{$booking->booking_id}}</p>
+        @if( $booking->dateofbooking < $currentTime )
+          <p style="color: #359c56"><i style="font-size: 20px" class="fas fa-check-circle"></i> Finished #{{$booking->booking_id}}</p>
+        @elseif( $booking->dateofbooking > $currentTime )
+          <p style="color: #f19d00"><i style="font-size: 20px" class="fas fa-clock"></i> Upcoming #{{$booking->booking_id}}</p>
+        @endif
         <h4 class="card-title"> {{$booking->service_name}}</h4>
         <h5 class="float-right">{{ \Carbon\Carbon::parse($booking->dateofbooking)->format('D d M Y')}} {{$booking->timeslot}}</h5>
         <h5 class="card-text">£ {{$booking->service_price}}</h5>
@@ -129,6 +179,6 @@
     <br>
     @endforeach
   </div>
-</div>
+</div> --}}
     
 @endsection

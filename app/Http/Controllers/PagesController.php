@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Carbon\Carbon;
 use App\Category;
 use App\Store;
 use App\Staff;
@@ -247,16 +248,22 @@ class PagesController extends Controller
         $favtitle = 'Favourites';
         $title = 'Booking History';
 
+        // Show current date and time
+        $currentTime = Carbon::now();
+
         // $user_id = auth()->user('id');
         $user_id = auth()->user()->id;
         $bookings = Booking::where('user_id', $user_id)->get();
+        // $bookings = Booking::orderBy('created_at', 'desc')->paginate(10);
+
         // $historycount = Booking::count('user_id', $user_id);
  
         return view('pages.history', ['title' => $title,
         'favtitle' => $favtitle,
         // 'historycount' => $historycount,
         'user_id' => $user_id,
-        'bookings' => $bookings]);
+        'bookings' => $bookings,
+        'currentTime' => $currentTime]);
     }
 
 
