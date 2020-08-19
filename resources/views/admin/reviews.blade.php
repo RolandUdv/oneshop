@@ -14,7 +14,7 @@
                     <tr>
                         <th>Review ID</th>
                         <th>User ID</th>
-                        <th>Profile Image</th>
+                        {{-- <th>Profile Image</th> --}}
                         <th>Username</th>
                         <th>Firstname</th>
                         <th>Surname</th>
@@ -35,7 +35,7 @@
                     <tr>
                         <td>{{$review->review_id}}</td>
                         <td>{{$review->user_id}}</td>
-                        <td>{{$review->profile_image}}</td>
+                        {{-- <td>{{$review->profile_image}}</td> --}}
                         <td>{{$review->username}}</td>
                         <td>{{$review->firstname}}</td>
                         <td>{{$review->surname}}</td>

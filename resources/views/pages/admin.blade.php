@@ -80,12 +80,8 @@
     </div>
 </div>
 
-    @endif
-    @endif
-
-
-
-
+@endif
+@endif
 
     @if(isset($bookings))
     @if(count($bookings))
@@ -153,8 +149,8 @@
         </div>
     </div>
 
-        @endif
-        @endif
+    @endif
+    @endif
 
 
 @if(isset($reviews))
@@ -216,8 +212,8 @@
     </div>
 </div>
 
-    @endif
-    @endif
+@endif
+@endif
 
 
 

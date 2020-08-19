@@ -47,8 +47,6 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-{{-- </div> --}}
-
 
 
 
@@ -58,15 +56,11 @@
     </br>
         <h1>Most Popular Services</h1>
     </br>
-        <!-- justify-content-center, brings content to the center -->
         @if(count($services) > 0)
-        {{-- <div class="btn-toolbar text-center" role="toolbar" aria-label="Toolbar with button groups"> --}}
-        {{-- <div class="btn-group btn-group-lg" role="group"> --}}
             @foreach ($services as $service)
             <a href="{{'services'}}"><button type="button" class="btn btn-secondary"
                     style="margin-right:10px; margin-bottom:10px;">{{$service->service_name}}</button></a>
             @endforeach
-        {{-- </div> --}}
         @endif
         </div>  
     </div>

@@ -244,15 +244,18 @@
                 {{Form::hidden('service_price', $service_price, ['class' => 'form-control', 'placeholder' => 'Service Price'])}}
                 {{-- {{Form::hidden('service_price', $service_length, ['class' => 'form-control', 'placeholder' => 'Service Price'])}} --}}
             </div>
-            <div class="form-group"></br>
-            
+            <div class="form-group">
             {{Form::hidden('dateofbooking', '', ['id' => 'dateofbooking'])}}
             {{-- {{Form::hidden('timeslot', '', ['id' => 'timepicker'])}} --}}
             {{Form::hidden('timeslot', '', ['id' => 'time'])}}
             <!-- d-none hides field on all screens -->
             <!-- d-block d-sm-none displays fields on small displays only -->
             </div>
+            <hr>
+            <div class="form-group">
                 {{Form::submit('Book Appointment', ['class' => 'submitbtn btn btn-primary btn-lg btn-block', 'style' => 'border-radius: 20px;'])}}
+                <br>
+                <button type="button" style="border-radius: 20px; width: 100%" class="btn btn-lg btn-success" disabled>Pay In Advance (Coming Soon)</button>
                 {{-- {{Form::submit('Pay In Advance', ['class' => 'btn btn-success btn-md btn-block disabled', 'style' => 'border-radius: 20px;'])}} --}}
                 {!! Form::close() !!}
             </div>

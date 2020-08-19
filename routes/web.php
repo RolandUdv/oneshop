@@ -1,17 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-
 // top navigation bar
 Route::get('/', 'PagesController@index');
 
@@ -26,8 +14,6 @@ Route::get('/generateqr', 'PagesController@generateqr');
 Route::get('/services', 'PagesController@services');
 Route::post('/services', 'PagesController@storereview');
 
-
-// Route::post('/services{$id}', 'PagesController@createbooking'); // may not work !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 Route::get('/services/{service_id}/{service_name}/{service_price}', 'PagesController@show');
 Route::post('/services}', 'PagesController@storebooking'); 
 
@@ -37,7 +23,6 @@ Route::get('/history', 'PagesController@history');
 Route::get('/profile', 'PagesController@profile');
 Route::get('/store', 'PagesController@store');
 Route::get('/support', 'PagesController@support');
-
 
 Route::get('/categories', 'CategoryController@categories');
 Route::get('/admin/staff', 'PagesController@staff');
@@ -51,10 +36,7 @@ Route::get('/store', 'StoresController@store');
 Route::get('/opentime', 'OpentimesController@opentime');
 Route::get('/reviews', 'ReviewController@reviews');
 Route::get('/homepage', 'HomepageController@homepage');
-// Route::get('index', 'HomepageController@index');
 
-// Route::get('/staff', 'StaffController@staff');
-//Route::resource('posts', 'PostsController');  //this has been deleted
 Route::resource('pages', 'PagesController');
 // Route::resource('service', 'BookingController');
 Route::resource('bookings', 'BookingController');

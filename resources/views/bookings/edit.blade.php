@@ -5,26 +5,27 @@
     <i class="fas fa-angle-double-left"></i> Back to Bookings
 </a>
 
-
 <h3>{{$title}}</h3>
 <div style="padding: 0 5em 0 5em;">
     {!! Form::open(['action' => ['BookingController@update', $bookings->booking_id], 'method' => 'POST']) !!}
-        <div class="form-group">
+        {{-- <div class="form-group">
             {{Form::label('created_at', 'Created At')}}
-
-            {{-- {{Form::date('created_at', $bookings->created_at, ['class' => 'form-control', 'placeholder' => 'Created At'],  \Carbon\Carbon::now()->toDateTime())}}
-            {{ var_dump( \Carbon\Carbon::now()->toDateTime())}}
-            {{Form::date('name', \Carbon\Carbon::now()->toDateTime())}} --}}
             {{Form::date('created_at', $bookings->created_at, ['class' => 'form-control input-group-date', 'placeholder' => 'Created At'])}}
-
-            {{-- {{Form::date('created_at', $bookings->created_at, ['class' => 'form-control', 'placeholder' => 'Created At'])}} --}}
-        </div>
-        <div class="form-group">
+        </div> --}}
+        {{-- <div class="form-group">
             {{Form::label('service_id', 'Service ID')}}
             {{Form::text('service_id', $bookings->service_id, ['class' => 'form-control', 'placeholder' => 'Service ID'])}}
+        </div> --}}
+        <div class="form-group">
+            {{Form::label('service_name', 'Service Name')}}
+            {{Form::text('service_name', $bookings->service_name, ['class' => 'form-control', 'placeholder' => 'Service Name'])}}
         </div>
         <div class="form-group">
-            {{Form::label('service_price', 'Service Price')}}
+            {{Form::label('timeslot', 'Timeslot')}}
+            {{Form::text('timeslot', $bookings->timeslot, ['class' => 'form-control', 'placeholder' => 'Timeslot'])}}
+        </div>
+        <div class="form-group">
+            {{Form::label('service_price', 'Service Price in £')}}
             {{Form::number('service_price', $bookings->service_price, ['class' => 'form-control', 'placeholder' => '£ Service Price', 'step' => '0.01', 'min' => '0'])}}
         </div>
         <div class="form-group">

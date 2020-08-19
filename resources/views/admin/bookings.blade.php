@@ -9,13 +9,12 @@
   <button type="button" style="margin-left: 20px" class="btn btn-secondary float-right" data-toggle="modal" data-target="#exampleModalCenter">
   Table View
   </button>
-
-    @if (\Auth::user()->isAdmin == '1')
+    {{-- Add New Button Disabled --}}
+    {{-- @if (\Auth::user()->isAdmin == '1')
         <a class="btn btn-primary float-right" href="{{ url('bookings/create')}}" role="button">Add New</a>
     @elseif (\Auth::user()->isStaff == '1')
         <a class="btn btn-primary float-right disabled" href="{{ url('bookings/create')}}" role="button">Add New</a>
-        {{-- disabled --}}
-    @endif
+    @endif --}}
   
   <br>
   <br>
@@ -84,15 +83,13 @@
                   <div class="card mb-3">
                       <div class="card-header">
                           <i class="fa fa-table"></i> {{$title}} Table
-                          @if (\Auth::user()->isAdmin == '1')
+                          {{-- @if (\Auth::user()->isAdmin == '1')
                           <a class="btn btn-primary float-right" href="{{ url('bookings/create')}}" role="button">Add
                               New</a>
-                          {{-- disabled --}}
                           @elseif (\Auth::user()->isStaff == '1')
                           <a class="btn btn-primary float-right disabled" href="{{ url('bookings/create')}}"
                               role="button">Add New</a>
-                          {{-- disabled --}}
-                          @endif
+                          @endif --}}
                           </br>
                           <h5 class="float-left px-1"><span class="badge badge-pill badge-info text-white">B ID =
                                   Booking ID</span></h5>

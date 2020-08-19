@@ -20,11 +20,8 @@
     <h4>Phone No.</h4>
     <p>{{$store->phone_no}}</p>
                        
-    <h4>House No.</h4>
-    <p>{{$store->house_no}}</p>
-                       
     <h4>Address</h4>
-    <p>{{$store->address}}</p>
+    <p>{{$store->house_no}} {{$store->address}}</p>
                         
     <h4>City</h4>
     <p>{{$store->city}}</p>
@@ -38,7 +35,7 @@
     <h4>Postcode</h4>
     <p>{{$store->postcode}}</p>
                        
-    <h4>Last Updated</h4>
+    <h5>Store Information Last Updated</h5>
     <p>{{$store->updated_at}}</p>
     @endforeach
 
@@ -50,7 +47,7 @@
 <br>
 <br>
     {{-- <a href="store_information/{{$store->store_id}}/edit"><i class="fas fa-edit"></i>Edit</a> --}}
-@elseif (\Auth::user()->isStaff == '1') 
+{{-- @elseif (\Auth::user()->isStaff == '1')  --}}
 @endif
 </div>
     <div class="card-footer small text-muted">Last Updated at: @include('inc.todaydate')</div>

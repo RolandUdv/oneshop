@@ -135,10 +135,6 @@
 </div>
 @endif
 @endforeach
-{{-- <br> --}}
-{{-- <div class="float-right">{{$bookings->links()}}</div> --}}
-{{-- <br> --}}
-{{-- <br> --}}
 <hr>
 <br>
 
@@ -155,7 +151,7 @@
         <h4 class="float-right">{{ \Carbon\Carbon::parse($booking->dateofbooking)->format('D d M Y')}} {{$booking->timeslot}}</h4><br>
         <h5 class="card-text">£ {{$booking->service_price}}</h5>
         <a href="#" style="width: 170px; padding: 7px" class="btn btn-primary text-white text-uppercase">Book Again</a>
-        <a href="#" style="width: 160px; padding: 7px" class="btn btn-dark float-right text-white"><i class="fas fa-star"></i> Leave a review</a>
+        <a href="{{ url('services')}}" style="width: 160px; padding: 7px" class="btn btn-dark float-right text-white"><i class="fas fa-star"></i> Leave a review</a>
       </div>
     </div>
   </div>
