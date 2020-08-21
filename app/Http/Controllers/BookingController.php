@@ -169,6 +169,7 @@ class BookingController extends Controller
         $bookings = Booking::find($id);
         // $bookings->created_at = $request->input('created_at');
         $bookings->updated_at = $request->input('updated_at');
+        $bookings->timeslot = $request->input('timeslot');
         // $bookings->service_id = $request->input('service_id');
         // $bookings->service_price = $request->input('service_price');
         // $bookings->service_length = $request->input('service_length');
